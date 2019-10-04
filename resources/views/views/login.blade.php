@@ -18,7 +18,8 @@
         <!-- GRID -->
         <div class="grid">
             <div class="unit half">
-                <form action="" method="post">
+                <form action="{{route('login')}}" method="post">
+                    @csrf
                     <div class="form-group">
                         <label for="">Email address</label>
                         <input type="email" class="form-control" name="email" placeholder="Email">
