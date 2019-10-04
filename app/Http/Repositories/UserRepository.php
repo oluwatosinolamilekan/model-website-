@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use Mail;
-use App\Models\Laboratory;
 use Auth;
 use App\Models\{User,PasswordReset};
 use Cloudder;

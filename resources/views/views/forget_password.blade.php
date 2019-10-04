@@ -33,9 +33,6 @@
                         <input type="submit" id="sendMessage" name="sendMessage" value="Submit" />
 
                     </div>
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                    <a href="#" class="auth-link text-black">Forgot password?</a>
-                </div>
                 </form>
             </div>
         </div>
