@@ -42,7 +42,7 @@
         <main id="main">
             <!-- PAGE TITLE -->
             <div id="page-title">
-                <h1><span>Galleries - 3 Columns</span></h1>
+                <h1><span>Galleries</span></h1>
             </div>
             <!-- PAGE CONTAINER -->
             <div id="page-container">
@@ -56,7 +56,7 @@
                                  <div id="gallery3" class="grid-container">
                                     <div class="grid-img">
                                         <a href="#" class="gallery photo">
-                                            <img src="frontend/images/photos/gallery3.jpg" alt="" />
+                                            <img src="{{asset('frontend/images/photos/gallery3.jpg')}}" alt="" />
                                         </a>
                                     </div>
                                     <div class="grid-content">
@@ -71,7 +71,7 @@
                                 <div id="gallery3" class="grid-container">
                                     <div class="grid-img">
                                         <a href="#" class="gallery photo">
-                                            <img src="frontend/images/photos/gallery3.jpg" alt="" />
+                                            <img src="{{asset('frontend/images/photos/gallery3.jpg')}}" alt="" />
                                         </a>
                                     </div>
                                     <div class="grid-content">
@@ -86,7 +86,7 @@
                                 <div id="gallery3" class="grid-container">
                                     <div class="grid-img">
                                         <a href="#" class="gallery photo">
-                                            <img src="frontend/images/photos/gallery3.jpg" alt="" />
+                                            <img src="{{asset('frontend/images/photos/gallery3.jpg')}}" alt="" />
                                         </a>
                                     </div>
                                     <div class="grid-content">

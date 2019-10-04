@@ -89,40 +89,8 @@ class ViewController extends Controller
         return view('views.login');
     }
 
-    public function register(Request $request)
-    {
-        if ($request->isMethod('post')) {
-            try {
-                $validator = Validator::make($request->all(), [
-                    'email' => 'required',
-                    'password' => 'required',
-                ]);
-    
-                if ($validator->fails()) {
-                    return back()
-                    ->withErrors($validator)
-                    ->withInput();
-                }
 
-                
-                $user = new User;
-                $user->name = $request->name;
-                $user->email = $request->email;
-                $user->gender = $request->gender;
-                $user->save();
-
-                Auth::login($user);
-
-                //redirect to home page to upload his picture
-
-            } catch (\Exception $e) {
-                return back()->with('error',$e->getMessage());
-            }
-        }
-        return view('views.reg');
-    }
-
-    public function uploda_picture(Request $request)
+    public function upload_picture(Request $request)
     {
         if ($request->isMethod('post')) {
             try {
@@ -158,10 +126,7 @@ class ViewController extends Controller
         }
     }
 
-    public function model(Type $var = null)
-    {
-        # code...
-    }
+   
 
     public function forget_password(Request $request)
     {
