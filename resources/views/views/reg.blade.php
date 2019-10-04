@@ -2,23 +2,6 @@
 
 @section('content')
 
-<style>
-    .select-control{
-    width: 75% !important;
-    float: left;
-    margin: 0px;
-    border-right: none !important;
-    height: 50px;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-}
-
-.select-control:focus {
-    animation: none !important;
-}
-</style>
 <main id="main">
     <!-- FEATURED IMAGE -->
     <div id="featured-image-container">
@@ -75,8 +58,6 @@
                             </select>
                     </div>
 
-
-
                     <div class="form-group">
                             <label for="">Phone Number</label>
                             <input type="number" class="form-control" name="phone" placeholder="Enter Phone Number">
@@ -90,6 +71,11 @@
                     <div class="form-group">
                             <label for="">City</label>
                             <input type="text" class="form-control" name="city" placeholder="Enter City">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Image</label>
+                        <input type="file" class="form-control" name="profile_image">
                     </div>
 
 
