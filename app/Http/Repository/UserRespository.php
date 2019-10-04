@@ -8,7 +8,7 @@ use Mail;
 use App\Models\Laboratory;
 use Auth;
 use App\Models\{User,PasswordReset};
-
+use Cloudder;
 
 class LoginRepository
 {
