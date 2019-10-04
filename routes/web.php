@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('views.content');
-// });
+Route::get('/test', function () {
+    return view('views.test');
+});
 
 Route::get('/','ViewController@index')->name('index');
 Route::get('/about','ViewController@about')->name('about');

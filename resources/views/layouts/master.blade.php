@@ -11,17 +11,15 @@
     <!-- FAVICON -->
     <link href="{{asset('frontend/images/favicon.ico')}}" rel="shortcut icon" type="image/x-icon" />
     <!-- CSS FILES -->
-    <link href="{{asset('frontend/css/normalize.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('frontend/css/normalize.css')}}" rel="stylesheet" type="text/css"> 
     <link href="{{asset('frontend/css/fakeloader.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/animations.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/tooltipster.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('frontend/css/nerveslider.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('frontend/css/owl.carousel.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/colors.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/media.css')}}" rel="stylesheet" type="text/css">
-    @yield('script')
+    @yield('css')
 
      <!-- CSS FILES -->
     <!--[if lt IE 9]>

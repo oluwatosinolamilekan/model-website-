@@ -2,6 +2,10 @@
 
 @section('content')
 
+@section('css')
+<link href="{{asset('frontend/css/nerveslider.css')}}" rel="stylesheet" type="text/css">
+<link href="{{asset('frontend/css/owl.carousel.css')}}" rel="stylesheet" type="text/css">
+@endsection
 <main id="main">
             <!-- SLIDER -->
             <div id="slider-container">
