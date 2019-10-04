@@ -21,6 +21,9 @@
     <link href="{{asset('frontend/css/owl.carousel.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/colors.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/media.css')}}" rel="stylesheet" type="text/css">
+    @yield('script')
+
+     <!-- CSS FILES -->
     <!--[if lt IE 9]>
        <script type="text/javascript" src="js/html5.js"></script>
     <![endif]-->
@@ -54,103 +57,13 @@
     <script type="text/javascript" src="{{asset('frontend/js/homeslider.js')}}"></script>
     <!-- CAROUSELS -->
     <script type="text/javascript" src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
-    <!-- MODELS CAROUSEL -->
-    <script type="text/javascript">
-        jQuery(window).load(function () {
-            jQuery("#models").owlCarousel({
-                items: 1,
-                margin: 30,
-                dots: false,
-                smartSpeed: 800,
-                navText: [' ', ' '],
-                nav: true,
-                loop: false,
-                navRewind: false,
-                lazyLoad: true,
-                responsive: {
-                    481: {
-                        items: 1
-                    },
-                    641: {
-                        items: 2
-                    },
-                    1025: {
-                        items: 3
-                    }
-                }
-            });
-        });
-    </script>
-    <!-- TESTIMONIALS CAROUSEL -->
-    <script type="text/javascript">
-        jQuery(window).load(function () {
-            "use strict";
-            jQuery("#testimonials").show();
-            var owl = jQuery("#testimonials").owlCarousel({
-                items: 1,
-                autoplay: true,
-                autoplayTimeout: 4000,
-                autoplayHoverPause: true,
-                dots: false,
-                autoHeight: false,
-                margin: 100,
-                mouseDrag: false,
-                touchDrag: false,
-                smartSpeed: 800,
-                nav: false,
-                loop: true,
-                animateIn: 'fadeIn',
-                animateOut: 'fadeOut'
-            });
-            jQuery('#testimonials').find('.testimonial-nav-left .fa').click(function() {
-                owl.trigger('prev.owl.carousel');
-            });
-            jQuery('#testimonials').find('.testimonial-nav-right .fa').click(function() {
-                owl.trigger('next.owl.carousel');
-            });
-        });
-    </script>
-    <!-- OUR PARTNERS CAROUSEL -->
-    <script type="text/javascript">
-        jQuery(window).load(function () {
-            "use strict";
-            jQuery("#partners").owlCarousel({
-                autoplay: true,
-                autoplayTimeout: 4000,
-                autoplayHoverPause: true,
-                items: 1,
-                margin: 20,
-                dots: false,
-                smartSpeed: 800,
-                navText: ['', ''],
-                nav: false,
-                loop: true,
-                lazyLoad: true,
-                responsive: {
-                    341: {
-                        items: 2
-                    },
-                    641: {
-                        items: 3
-                    },
-                    1025: {
-                        items: 4
-                    }
-                }
-            });
-        });
-    </script>
-    <!-- BACKSTRETCH (BG IMAGES) -->
     <script type="text/javascript" src="{{asset('frontend/js/backstretch.min.js')}}"></script>
-    <script type="text/javascript">
-        jQuery(window).load(function () {
-            "use strict";
-            jQuery('.grid.hero').backstretch("frontend/images/photos/testimonials.jpg");
-        });
-    </script>
+
+   
     <!-- TOOLTIPS -->
     <script type="text/javascript" src="{{asset('frontend/js/jquery.tooltipster.min.js')}}"></script>
     <!-- CUSTOM JS -->
     <script type="text/javascript" src="{{asset('frontend/js/custom.js')}}"></script>
+    @yield('script')
 </body>
 </html>

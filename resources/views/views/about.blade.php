@@ -6,7 +6,7 @@
             <!-- FEATURED IMAGE -->
             <div id="featured-image-container">
                 <!-- LOADER -->
-                <div class="img-loading"></div>
+                <div class="img-    loading"></div>
                 <div id="featured-image">
                     <div id="featured-image-title">
                         <h1>About Us</h1>
@@ -255,4 +255,35 @@
                 </div>
             </div>
         </main>
+
+        @endsection
+
+@section('script')
+<!-- MEMBERS CAROUSEL -->
+<script type="text/javascript">
+    jQuery(window).load(function () {
+        jQuery("#ourteam").owlCarousel({
+            items: 1,
+            margin: 30,
+            dots: false,
+            smartSpeed: 800,
+            navText: [' ', ' '],
+            nav: true,
+            loop: false,
+            navRewind: false,
+            lazyLoad: true,
+            responsive: {
+                481: {
+                    items: 1
+                },
+                641: {
+                    items: 2
+                },
+                1025: {
+                    items: 3
+                }
+            }
+        });
+    });
+</script>
 @endsection
