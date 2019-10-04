@@ -35,7 +35,7 @@
         <!-- GRID -->
         <div class="grid">
             <div class="unit half">
-            <form action="{{route('reg')}}" method="post">
+            <form action="{{route('register')}}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="">First Name</label>
@@ -66,14 +66,16 @@
                             <input type="password" class="form-control" name="confirmation_password" placeholder="Enter Same Password">
                     </div>
 
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                             <label for="">Sex</label>
-                            <select class="select-control" name="sex" required>
+                            <select class="form-control" name="sex" required>
                                 <option value="">Select</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
-                    </div> --}}
+                    </div>
+
+
 
                     <div class="form-group">
                             <label for="">Phone Number</label>

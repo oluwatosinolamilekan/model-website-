@@ -33,7 +33,9 @@ TABS
 ACCORDION
 FOOTER
 
-*/
+
+
+
 
 /* ================= FONTS ================== */
 @font-face {
@@ -50,7 +52,7 @@ FOOTER
     font-weight: normal;
     font-style: normal;
 }
-body,p,input,textarea {
+body,p,input,textarea,select {
     font-family: 'ralewayregular';
     font-weight: normal;
     letter-spacing: 0.03em;
@@ -61,6 +63,23 @@ h1,h2,h3,h4,h5,h6,strong,label,.ns_nerveSlider .ns_slideContent div span,.rounde
     font-weight: normal;
     letter-spacing: 0.04em;
     word-spacing: normal;
+}
+select{
+    background-color: #16171D;
+    border: 1px solid #363635;
+    color: #818181;
+    position: relative;
+    width: 100%;
+    display: block;
+    margin: 0px 0px 30px 0px;
+    padding: 15px;
+    transition: all 0.8s ease-in-out;
+    border-radius: 0px !important;
+    outline: none !important;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
 }
 #featured-image-title p,blockquote p,.caption-quote blockquote p, i,em,.testimonial .testimonial-text p,.video-title,.button-box-left p,.grid.grid-button p,.grid.hero p,.experience-title p,.sidebar-post-date,.ns_nerveSlider .ns_slideContent div p span,.grid-content.grid-quote h4,#sub-title {
     font-family: Georgia;

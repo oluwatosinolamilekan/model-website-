@@ -24,4 +24,4 @@ Route::get('/profile/{slug}','ViewController@profile')->name('profile');
 
 
 Route::match(['get', 'post'],'auth/login','ViewController@login')->name('login');
-Route::match(['get', 'post'],'auth/register','ViewController@reg')->name('register');
+Route::match(['get', 'post'],'auth/register','UserController@register')->name('register');

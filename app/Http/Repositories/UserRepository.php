@@ -10,12 +10,8 @@ use Auth;
 use App\Models\{User,PasswordReset};
 use Cloudder;
 
-class LoginRepository
+class UserRepository
 {
-	public function login($request)
-	{
-
-	}
 
 	public function register($request)
 	{
@@ -30,8 +26,7 @@ class LoginRepository
 			 $user = new User;
 			 $user->first_name = $request->first_name;
 			 $user->last_name = $request->last_name;
-			 //save slug
-			 $user->slug = str_slug($request->first_name"-".$request->last_name)
+			 // $user->slug = str_slug($request->first_name"-".$request->last_name);
 			 $user->email = $request->email;
 			 $user->password = $request->password;
 			 $user->gender = $request->gender;
@@ -41,7 +36,9 @@ class LoginRepository
 			 $user->city = $request->city;
 			 $user->state = $request->state;
 			 $user->country = $request->country;
-			 $user->profile_image = $profile_image;
+			 // $user->profile_image = $profile_image;
+			 $user->profile_image = 'dk';
+
 			 $user->save();
 			 if (!$user) {
 			 	DB::rollback();
