@@ -19,6 +19,7 @@
     <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/colors.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/media.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
     @yield('css')
 
      <!-- CSS FILES -->
@@ -63,5 +64,22 @@
     <!-- CUSTOM JS -->
     <script type="text/javascript" src="{{asset('frontend/js/custom.js')}}"></script>
     @yield('script')
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+  <script type="text/javascript">
+    toastr.options.preventDuplicates = true;
+    //toastr.success("ola");
+    @if (session('success'))
+    toastr.success("{{session('success')}}");
+    @endif
+
+    @if (session('error'))
+    toastr.error("{{session('error')}}");
+    @endif
+
+    @if (session('info'))
+    toastr.info("{{session('info')}}");
+    @endif
+  </script>
+
 </body>
 </html>
