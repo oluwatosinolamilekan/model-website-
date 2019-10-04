@@ -33,7 +33,8 @@ class UserController extends Controller
 	    	}
 
 	    	try {
-	    		if($validator){
+	    		if($validator)
+	    		{
 	    			dd($validator);
 	                    $user = $this->user->register($request);
 	                    if($user == false ){

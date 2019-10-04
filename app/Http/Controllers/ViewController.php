@@ -127,9 +127,6 @@ class ViewController extends Controller
                         'token' => str_random(60)
                     ]
                 );
-                // $user->notify(
-            //     new PasswordResetRequest($passwordReset->token)
-            // );
             Mail::to($user->email)->send(new ForgetPassword($passwordReset->token));
             return back()->with('success','We have e-mailed your password reset link!');
         }    

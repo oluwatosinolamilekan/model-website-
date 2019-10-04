@@ -34,7 +34,7 @@
 
                     </div>
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                    <a href="#" class="auth-link text-black">Forgot password?</a>
+                    <a href="{{route('forget_password')}}" class="auth-link text-black">Forgot password?</a>
                 </div>
                 </form>
             </div>
