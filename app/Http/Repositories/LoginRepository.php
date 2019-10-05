@@ -9,6 +9,7 @@ use Auth;
 use App\Models\{User,PasswordReset};
 use Cloudder;
 use DB;
+use App\Notifications\ForgetPassword;
 
 class LoginRepository
 {
@@ -18,8 +19,8 @@ class LoginRepository
 		try {
 	
 			$user = User::where('email', $request->email)->first();
-			if($user){
-				DB::beginTransaction();
+			DB::beginTransaction();
+			 if($user){
 				$passwordReset = PasswordReset::updateOrCreate(
 	                ['email' => $user->email],
 	                [
@@ -27,18 +28,23 @@ class LoginRepository
 	                    'token' => str_random(60)
 	                ]
 	            );
-        	 	Mail::to($user->email)->send(new ForgetPassword($passwordReset->token));
-			}else{
-				return $user = false;
+        	 	// Mail::to($user->email)->send(new ForgetPassword($passwordReset->token));
+        	 	// $user->notify(new ForgetPassword($passwordReset->token));
+        	 	 $user->notify(
+                new ForgetPassword($passwordReset->token)
+            );
+
 			}
         	if (!$user) 
         	{
+        		DB::rollback();
         		return false;
         	}else{
         		DB::commit();
         		return true;
         	}	
 		} catch (\Exception $e) {
+			dd($e->getMessage());
 			return $e->getMessage();
 		}
 	}

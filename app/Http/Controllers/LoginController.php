@@ -66,7 +66,6 @@ class LoginController extends Controller
 	                    return Redirect::back()->withErrors($validator);
 	                }
             } catch (\Exception $e) {
-				dd($e->getMessage());
 	    		return back()->with('error',$e->getMessage());
             }
     	}
