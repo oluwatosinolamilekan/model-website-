@@ -28,12 +28,7 @@ class LoginRepository
 	                    'token' => str_random(60)
 	                ]
 	            );
-        	 	// Mail::to($user->email)->send(new ForgetPassword($passwordReset->token));
-        	 	// $user->notify(new ForgetPassword($passwordReset->token));
-        	 	 $user->notify(
-                new ForgetPassword($passwordReset->token)
-            );
-
+        	 	$user->notify( new ForgetPassword($passwordReset->token));
 			}
         	if (!$user) 
         	{
@@ -44,7 +39,7 @@ class LoginRepository
         		return true;
         	}	
 		} catch (\Exception $e) {
-			dd($e->getMessage());
+				dd($e->getMessage());
 			return $e->getMessage();
 		}
 	}

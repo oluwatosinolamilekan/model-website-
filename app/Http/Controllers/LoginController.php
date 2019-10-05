@@ -30,8 +30,7 @@ class LoginController extends Controller
                 ->withInput();
             }
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            	dd($request->all());
-                return redirect()->route('auth.dashboard')->with('success','Welcome');
+                return redirect()->route('user.dashboard')->with('success','Welcome');
             }else{
                 return back()->with('error','wrong password');
             }

@@ -27,4 +27,5 @@ Route::match(['get', 'post'],'auth/login','LoginController@login')->name('login'
 Route::match(['get', 'post'],'auth/register','UserController@register')->name('register');
 Route::match(['get', 'post'],'auth/forget-password','LoginController@forget_password')->name('forget_password');
 
-
+//user route
+Route::get('user/dashboard','UserDashboardController@dashboard')->name('user.dashboard');
