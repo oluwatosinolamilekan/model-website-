@@ -11,15 +11,15 @@
         <!-- GRID -->
         <div class="grid">
             <div class="unit half">
-                <p>Do illum ex nulla, tempor varias possumus, te ipsum ex cernantur, eram te si quae.</p>
                 <!-- CONTACT FORM -->
-                <form class="form-box" action="http://ombre.wp4life.com/processform.php" method="post">
+                <form class="form-box" action="{{route('contact')}}" method="post">
+                    @csrf
                     <label>Full name :</label>
-                    <input type="text" name="senderName" id="senderName" required="required" maxlength="50" />
+                    <input type="text" name="name" id="senderName" required="required" maxlength="50" />
                     <label>Phone Number :</label>
-                    <input type="number" name="phoneNumber" id="phoneNumber" required="required" />
+                    <input type="number" name="phone" id="phoneNumber" required="required" />
                     <label>Email address :</label>
-                    <input type="email" name="senderEmail" id="senderEmail" required="required" maxlength="50" />
+                    <input type="email" name="email" id="senderEmail" required="required" maxlength="50" />
                     <label>Message :</label>
                     <textarea name="message" id="message" required="required"></textarea>
                     <input type="submit" id="sendMessage" name="sendMessage" value="Send Message" />

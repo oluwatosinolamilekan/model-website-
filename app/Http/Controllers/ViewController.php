@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+use App\Models\{Contact};
 use Illuminate\Http\Request;
+use Validator;
+use DB;
 
 class ViewController extends Controller
 {
@@ -42,7 +44,6 @@ class ViewController extends Controller
                 'email' => 'required|unique:contacts',
                 'message' => 'required',
             ]);
-
             if ($validator->fails()) {
                 return back()
                 ->withErrors($validator)
@@ -50,13 +51,21 @@ class ViewController extends Controller
             }
 
             try {
+             DB::beginTransaction();
                 $contact = new Contact;
                 $contact->name = $request->name;
                 $contact->phone = $request->phone;
                 $contact->email = $request->email;
                 $contact->message = $request->message;
                 $contact->save();
-                return back()->with('success','Message Sent!');
+                if ($contact) {
+                    DB::commit();
+                    return back()->with('success','Message Sent!');
+
+                }else{
+                    DB::rollback();
+                    return back();
+                }
             } catch (\Exception $e) {
                 return back()->with('error',$e->getMessage());
             }
@@ -106,32 +115,6 @@ class ViewController extends Controller
     }
 
    
-
-    public function forget_password(Request $request)
-    {
-        if ($request->isMethod('post')) {
-            $validator = Validator::make($request->all(), [
-                'email' => 'required',
-            ]);
-            if ($validator->fails()) {
-                return back()->withErrors($validator);
-            }
-            $user = User::where('email', $request->email)->first();
-             if (!$user)
-                return back()->with('success','We cant find a user with that e-mail address.');
-
-                $passwordReset = PasswordReset::updateOrCreate(
-                    ['email' => $user->email],
-                    [
-                        'email' => $user->email,
-                        'token' => str_random(60)
-                    ]
-                );
-            Mail::to($user->email)->send(new ForgetPassword($passwordReset->token));
-            return back()->with('success','We have e-mailed your password reset link!');
-        }    
-         return view('auth.forget_password');
-    }
 
     public function token ($token)
     {
