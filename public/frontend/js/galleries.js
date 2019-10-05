@@ -15,31 +15,31 @@ jQuery('#gallery1 a').on('click', function (e) {
         hash: false,
         pager: false,
         // Images
-        dynamicEl: [{
-            'src': 'images/photos/gallery-big1.jpg',
-            'thumb': 'images/photos/gallery-thumb1.jpg',
-            'subHtml': 'Lorem ipsum dolor'
-        }, {
-            'src': 'images/photos/gallery-big2.jpg',
-            'thumb': 'images/photos/gallery-thumb2.jpg',
-            'subHtml': "Ullamco ubi mandaremus"
-        }, {
-            'src': 'images/photos/gallery-big3.jpg',
-            'thumb': 'images/photos/gallery-thumb3.jpg',
-            'subHtml': "Quae expetendis"
-        }, {
-            'src': 'images/photos/gallery-big4.jpg',
-            'thumb': 'images/photos/gallery-thumb4.jpg',
-            'subHtml': "Non nulla"
-        }, {
-            'src': 'images/photos/gallery-big5.jpg',
-            'thumb': 'images/photos/gallery-thumb5.jpg',
-            'subHtml': "Voluptate illum dolore"
-        }, {
-            'src': 'images/photos/gallery-big6.jpg',
-            'thumb': 'images/photos/gallery-thumb6.jpg',
-            'subHtml': "Tempor varias possumus"
-        }]
+        // dynamicEl: [{
+        //     'src': 'frontend/images/photos/gallery-big1.jpg',
+        //     'thumb': 'frontend/images/photos/gallery-thumb1.jpg',
+        //     'subHtml': 'Lorem ipsum dolor'
+        // }, {
+        //     'src': 'frontend/images/photos/gallery-big2.jpg',
+        //     'thumb': 'frontend/images/photos/gallery-thumb2.jpg',
+        //     'subHtml': "Ullamco ubi mandaremus"
+        // }, {
+        //     'src': 'frontend/images/photos/gallery-big3.jpg',
+        //     'thumb': 'frontend/images/photos/gallery-thumb3.jpg',
+        //     'subHtml': "Quae expetendis"
+        // }, {
+        //     'src': 'frontend/images/photos/gallery-big4.jpg',
+        //     'thumb': 'frontend/images/photos/gallery-thumb4.jpg',
+        //     'subHtml': "Non nulla"
+        // }, {
+        //     'src': 'frontend/images/photos/gallery-big5.jpg',
+        //     'thumb': 'frontend/images/photos/gallery-thumb5.jpg',
+        //     'subHtml': "Voluptate illum dolore"
+        // }, {
+        //     'src': 'frontend/images/photos/gallery-big6.jpg',
+        //     'thumb': 'frontend/ images/photos/gallery-thumb6.jpg',
+        //     'subHtml': "Tempor varias possumus"
+        // }]
     });
 });
 
@@ -85,48 +85,6 @@ jQuery('#gallery2').on('click', function (e) {
                 "subHtml": "You Tube"
             }
         ]
-    });
-});
-
-// GALLERY 3
-jQuery('#gallery3 a').on('click', function (e) {
-    "use strict";
-    e.preventDefault();
-    jQuery(this).lightGallery({
-        // Settings
-        dynamic: true,
-        zoom: true,
-        mode: 'lg-zoom-out-in',
-        fullScreen: true,
-        autoplay: true,
-        pause: 5000,
-        thumbnail: true,
-        download: true,
-        counter: true,
-        hash: false,
-        pager: false,
-        // Images
-        dynamicEl: [{
-            'src': 'images/photos/gallery-big2.jpg',
-            'thumb': 'images/photos/gallery-thumb2.jpg',
-            'subHtml': 'Lorem ipsum dolor'
-        }, {
-            'src': 'images/photos/gallery-big1.jpg',
-            'thumb': 'images/photos/gallery-thumb1.jpg',
-            'subHtml': "Ullamco ubi mandaremus"
-        }, {
-            'src': 'images/photos/gallery-big5.jpg',
-            'thumb': 'images/photos/gallery-thumb5.jpg',
-            'subHtml': "Quae expetendis"
-        }, {
-            'src': 'images/photos/gallery-big4.jpg',
-            'thumb': 'images/photos/gallery-thumb4.jpg',
-            'subHtml': "Non nulla"
-        }, {
-            'src': 'images/photos/gallery-big3.jpg',
-            'thumb': 'images/photos/gallery-thumb3.jpg',
-            'subHtml': "Voluptate illum dolore"
-        }]
     });
 });
 

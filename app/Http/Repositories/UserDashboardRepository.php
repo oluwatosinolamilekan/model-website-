@@ -9,7 +9,7 @@ use Auth;
 use App\Models\{User};
 use Cloudder;
 
-class UserRepository
+class UserDashboardRepository
 {
 
 	public function index()

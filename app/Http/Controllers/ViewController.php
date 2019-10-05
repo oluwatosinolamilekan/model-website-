@@ -5,9 +5,16 @@ use App\Models\{Contact};
 use Illuminate\Http\Request;
 use Validator;
 use DB;
-
+use App\Http\Repositories\UserRepository;
 class ViewController extends Controller
 {
+    private $user;
+
+    public function __construct(UserRepository $user)
+    {
+        $this->user = $user;
+    }
+   
     public function index()
     {
     	return view('views.content');
@@ -20,7 +27,8 @@ class ViewController extends Controller
 
     public function galleries()
     {
-        return view('views.gallaries');
+        $models = $this->user->models();
+        return view('views.gallaries',compact('models'));
     }
 
     public function models()
@@ -31,7 +39,7 @@ class ViewController extends Controller
 
     public function profile($slug)
     {
-        $models_profile = User::where('slug',$slug)->firstOrFail();
+        $models_profile  = $this->user->profile($slug);
         return view('views.profile',compact('models_profile'));
     }
 

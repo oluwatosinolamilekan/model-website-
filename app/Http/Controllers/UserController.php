@@ -14,6 +14,7 @@ class UserController extends Controller
         $this->user = $user;
     }
 
+ 
     public function register(Request $request)
     {
     	if ($request->isMethod('post')) {

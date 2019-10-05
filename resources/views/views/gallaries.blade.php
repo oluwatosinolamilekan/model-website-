@@ -53,50 +53,25 @@
                         <div class="masonry-grid">
                             <div id="three-columns" data-columns>
                                 <!-- GALLERY 1 -->
+                                @foreach($models as $model)
                                  <div id="gallery3" class="grid-container">
                                     <div class="grid-img">
-                                        <a href="#" class="gallery photo">
+                                        <a href="{{route('profile',$model->slug)}}" class="">
                                             <img src="{{asset('frontend/images/photos/gallery3.jpg')}}" alt="" />
                                         </a>
                                     </div>
                                     <div class="grid-content">
                                         <h5>
-                                       <a href="#">Autoplay On</a>
+                                       <a href="{{route('profile',$model->slug)}}">
+                                            {{$model->first_name." ".$model->last_name}}
+                                        </a>
                                     </h5>
-                                        <p>Sint admodum graviterque, occaecat lorem se singulis eruditionem sed malis aut nam quorum doctrina, possumus illum fore litteris</p>
                                     </div>
-                                    <a class="arrow-button" href="#">View Gallery</a>
+                                    <a class="arrow-button" href="{{route('profile',$model->slug)}}">
+                                            {{$model->first_name." ".$model->last_name}}">View Gallery</a>
                                 </div>
                                 <!-- GALLERY 2 -->
-                                <div id="gallery3" class="grid-container">
-                                    <div class="grid-img">
-                                        <a href="#" class="gallery photo">
-                                            <img src="{{asset('frontend/images/photos/gallery3.jpg')}}" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="grid-content">
-                                        <h5>
-                                       <a href="#">Autoplay On</a>
-                                    </h5>
-                                        <p>Sint admodum graviterque, occaecat lorem se singulis eruditionem sed malis aut nam quorum doctrina, possumus illum fore litteris</p>
-                                    </div>
-                                    <a class="arrow-button" href="#">View Gallery</a>
-                                </div>
-                                
-                                <div id="gallery3" class="grid-container">
-                                    <div class="grid-img">
-                                        <a href="#" class="gallery photo">
-                                            <img src="{{asset('frontend/images/photos/gallery3.jpg')}}" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="grid-content">
-                                        <h5>
-                                       <a href="#">Autoplay On</a>
-                                    </h5>
-                                        <p>Sint admodum graviterque, occaecat lorem se singulis eruditionem sed malis aut nam quorum doctrina, possumus illum fore litteris</p>
-                                    </div>
-                                    <a class="arrow-button" href="#">View Gallery</a>
-                                </div>
+                                @endforeach
                                 
                                 
                             </div>

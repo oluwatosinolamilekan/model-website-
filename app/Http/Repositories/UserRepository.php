@@ -12,6 +12,8 @@ use Cloudder;
 class UserRepository
 {
 
+
+
 	public function register($request)
 	{
 		try {
@@ -51,6 +53,17 @@ class UserRepository
 		}
 	}
 
-	
 
+	
+	public function models()
+	{
+		$models = User::latest()->paginate(20);
+		return $models;
+	}
+
+	public function profile($slug)
+    {
+        $models_profile = User::where('slug',$slug)->firstOrFail();
+        return $models_profile;
+    }
 }

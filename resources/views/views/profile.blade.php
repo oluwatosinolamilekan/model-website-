@@ -1,9 +1,14 @@
 @extends('layouts.master')
 
+@section('css')
+<link href="{{asset('frontend/css/nerveslider.css')}}" rel="stylesheet" type="text/css">
+<link href="{{asset('frontend/css/owl.carousel.css')}}" rel="stylesheet" type="text/css">
+@endsection
+
 @section('content')
 <main id="main">
     <div id="page-title">
-        <h1><span>{{$models_profile->first_name}}</span></h1>
+        <h1><span>{{$models_profile->first_name."".$models_profile->last_name}}</span></h1>
     </div>
     <!-- PAGE CONTAINER -->
     <div id="page-container">

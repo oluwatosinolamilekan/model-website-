@@ -46,7 +46,7 @@
 
                         @endif
                         <li>
-                            <a href="{{route('galleries')}}">Galleries</a>
+                            <a href="{{route('galleries')}}">Models</a>
                         </li>
                         <li>
                             <a href="{{route('contact')}}">Contact</a>
