@@ -32,13 +32,19 @@
                         <li>
                             <a href="{{route('index')}}">Home</a>
                         </li>
+                        @if(!Auth::check())
                         <li>
                             <a href="{{route('login')}}">Login</a>
                         </li>
                         <li>
                             <a href="{{route('register')}}">Sign Up</a>
                         </li>
-                      
+                        @else
+                        <li>
+                            <a href="{{route('auth.logout')}}">Logout</a>
+                        </li>
+
+                        @endif
                         <li>
                             <a href="{{route('galleries')}}">Galleries</a>
                         </li>

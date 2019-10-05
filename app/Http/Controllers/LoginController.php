@@ -70,4 +70,10 @@ class LoginController extends Controller
     	}
     	return view('views.forget_password');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/')->with('success','Logout Successfully');    
+    }
 }

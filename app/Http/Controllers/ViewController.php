@@ -190,10 +190,6 @@ class ViewController extends Controller
         return redirect()->route('login')->with('success','Password Change SuccessFully');
     }
 
-    public function logout()
-    {
-        Auth::logout();
-        return redirect('/')->with('success','Logout Successfully');    
-    }
+    
 
 }
