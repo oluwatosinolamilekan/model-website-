@@ -8,7 +8,7 @@
 @section('content')
 <main id="main">
     <div id="page-title">
-        <h1><span>{{$models_profile->first_name."".$models_profile->last_name}}</span></h1>
+        <h1><span>{{$models_profile->first_name." ".$models_profile->last_name}}</span></h1>
     </div>
     <!-- PAGE CONTAINER -->
     <div id="page-container">
@@ -43,14 +43,14 @@
                     </div>
                 </div>
                 <!-- EXPERIENCES -->
-                <h3 class="border">Education & Qualification</h3>
-                <div class="experience-box">
+                {{-- <h3 class="border">Education & Qualification</h3> --}}
+                {{-- <div class="experience-box">
                     <div class="experience-title">
                         <h5>Model Fashion Academy</h5>
                         <p>2006 – 2010</p>
                     </div>
                     <p>Pariatur ex malis hic probant qui nulla. Aut est irure incurreret a appellat si quamquam hic ne ullamco coniunctione, a noster expetendis. Ea iudicem exquisitaque ab nisi commodo sed malis fore. Singulis cohaerescant e mandaremus, o enim adipisicing ad in quem consectetur, se amet commodo ne sed mentitum ad nostrud iis se quis eiusmod, senserit minim a pariatur comprehenderit, ubi proident et senserit.</p>
-                </div>
+                </div> --}}
                 <div class="experience-box">
                     <div class="experience-title">
                         <h5>Bachelor of Fine Arts</h5>
@@ -89,7 +89,6 @@
                             <div class="ombre-table-right">10</div>
                         </li>
                     </ul>
-                    <p>Dancer, Actress, Singer, Musician, Acrobatics and Gymnastics, Sports, Voice Over, Basic French and Italian.</p>
                     <ul class="social-icons model-social">
                         <li>
                             <a href="#" class="fa fa-twitter tooltip-pink" title="Twitter">Twitter</a>
