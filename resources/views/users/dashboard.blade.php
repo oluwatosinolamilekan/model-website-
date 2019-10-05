@@ -26,21 +26,28 @@
                     <!-- TABLE -->
                     <ul class="ombre-table">
                         <li>
-                            <div class="ombre-table-left"><i class="ombre-icon fa fa-phone-square"></i>Phone</div>
-                            <div class="ombre-table-right">234-435-4345</div>
+                            <div class="ombre-table-left"><i class="ombre-icon fa fa-phone-square"></i>Total Photo</div>
+                            <div class="ombre-table-right">22</div>
                         </li>
                         <li>
-                            <div class="ombre-table-left"><i class="ombre-icon fa fa-envelope"></i>E-mail</div>
-                            <div class="ombre-table-right"><a href="mailto:info@company.com">info@company.com</a>
+                            <div class="ombre-table-left"><i class="ombre-icon fa fa-envelope"></i>Photos</div>
+                            <div class="ombre-table-right">
+                            	<a href="#">
+                            		View Photos
+                            	</a>
                             </div>
                         </li>
                         <li>
-                            <div class="ombre-table-left"><i class="ombre-icon fa fa-map"></i>Address</div>
-                            <div class="ombre-table-right">144 King St Melbourne</div>
+                            <div class="ombre-table-left"><i class="ombre-icon fa fa-map"></i>Approve Pictures</div>
+                            <div class="ombre-table-right">
+                            	23
+                        	</div>
                         </li>
                         <li>
-                            <div class="ombre-table-left"><i class="ombre-icon fa fa-fax"></i>Fax</div>
-                            <div class="ombre-table-right">234-435-4346</div>
+                            <div class="ombre-table-left"><i class="ombre-icon fa fa-fax">
+                            	
+                            </i>Pending Pictures</div>
+                            <div class="ombre-table-right">22</div>
                         </li>
                     </ul>
                     <!-- SOCIAL ICONS -->
