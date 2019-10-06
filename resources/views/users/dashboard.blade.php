@@ -27,7 +27,9 @@
                     <ul class="ombre-table">
                         <li>
                             <div class="ombre-table-left"><i class="ombre-icon fa fa-phone-square"></i>Total Photo</div>
-                            <div class="ombre-table-right">22</div>
+                            <div class="ombre-table-right">
+                            	{{$total_pictures}}
+                        	</div>
                         </li>
                         <li>
                             <div class="ombre-table-left"><i class="ombre-icon fa fa-envelope"></i>Photos</div>
@@ -40,14 +42,16 @@
                         <li>
                             <div class="ombre-table-left"><i class="ombre-icon fa fa-map"></i>Approve Pictures</div>
                             <div class="ombre-table-right">
-                            	23
+                            	{{$active_pictures_count}}
                         	</div>
                         </li>
                         <li>
                             <div class="ombre-table-left"><i class="ombre-icon fa fa-fax">
                             	
                             </i>Pending Pictures</div>
-                            <div class="ombre-table-right">22</div>
+                            <div class="ombre-table-right">
+                            	{{$deactive_pictures_count}}
+                            </div>
                         </li>
                     </ul>
                     <!-- SOCIAL ICONS -->
@@ -59,14 +63,9 @@
                             <a href="#" class="fa fa-twitter tooltip-pink" title="Twitter">Twitter</a>
                         </li>
                         <li>
-                            <a href="#" class="fa fa-google-plus tooltip-pink" title="Google Plus">Google</a>
-                        </li>
-                        <li>
                             <a href="#" class="fa fa-instagram tooltip-pink" title="Instagram">Instagram</a>
                         </li>
-                        <li>
-                            <a href="#" class="fa fa-vimeo tooltip-pink" title="Vimeo">Vimeo</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>

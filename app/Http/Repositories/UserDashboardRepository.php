@@ -50,4 +50,34 @@ class UserDashboardRepository
     	return $galleries;
     }
 
+    public function activePictures()
+    {
+    	$galleries = Gallery::where('user_id',Auth::id())->Active()->simplePaginate(20);
+    	return $galleries;
+    }
+
+    public function totalPictures()
+    {
+    	$galleries = Gallery::where('user_id',Auth::id())->count();
+    	return $galleries;
+    }
+
+    public function deactivePicturesCount()
+    {
+    	$galleries = Gallery::where('user_id',Auth::id())->Deactive()->count();
+    	return $galleries;
+    }
+
+    public function activePicturesCount()
+    {
+    	$galleries = Gallery::where('user_id',Auth::id())->Active()->count();
+    	return $galleries;
+    }
+
+    public function deactivePictures()
+    {
+    	$galleries = Gallery::where('user_id',Auth::id())->Deactive()->simplePaginate(20);
+    	return $galleries;
+    }
+
 }

@@ -45,7 +45,11 @@ class UserDashboardController extends Controller
             	return back()->with('error',$e->getMessage());
             }
     	}
-    	return view('users.dashboard');
+    	
+	    $active_pictures_count = $this->user->activePicturesCount();
+	    $deactive_pictures_count= $this->user->deactivePicturesCount();
+	    $total_pictures= $this->user->totalPictures();
+    	return view('users.dashboard',compact('active_pictures_count','deactive_pictures_count','total_pictures'));
     }
 
     public function user_galleries()
