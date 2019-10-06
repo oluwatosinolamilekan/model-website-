@@ -18,17 +18,18 @@ class UserDashboardRepository
 			 DB::beginTransaction();
 			 $date = strtotime(date("Y-m-d H:i:s"));
 			 $files = $request->file('images');
-			 foreach ($files as $key => $file) 
+			 foreach ($files as $file) 
 			 {
 			 	$image = new Gallery;
                 Cloudder::upload($file, null);
-                $publicId = Cloudder::show(Cloudder::getPublicId(), ["width" => width, "height"=>height]);
+                list($width, $height) = getimagesize($file);
+                $publicId = Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
                 $file_size = $file->getClientSize();
 			 	$image->user_id = Auth::id();
 			 	$image->images = $publicId;
+			 	$image->status = 0;
                 $image->save();
 			 }
-			 dd($image);
 			 if ($image) {
 			 	DB::commit();
 			 	return true;
