@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('state')->nullable();
             $table->string('country')->nullable();
             $table->string('profile_image')->nullable();
+            $table->integer('role_id')->default(3);
             $table->rememberToken();
             $table->timestamps();
         });
