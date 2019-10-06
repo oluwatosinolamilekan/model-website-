@@ -93,7 +93,7 @@
                             <img src="images/photos/about-thumb.jpg" alt="" />
                         </div>
                         <p>Voluptate illum dolore ita ipsum, quid deserunt singulis, labore admodum ita multos malis ea nam nam tamen fore amet. Vidisse quid incurreret ut ut possumus transferrem.</p>
-                        <a href="about.html" class="button">READ MORE</a>
+                        <a href="{{route('about')}}" class="button">READ MORE</a>
                     </div>
                     <div class="unit two-thirds">
                         <h3 class="border">Why Choose Us</h3>

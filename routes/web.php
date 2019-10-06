@@ -31,4 +31,5 @@ Route::match(['get', 'post'],'auth/forget-password','LoginController@forget_pass
 Route::get('auth/logout','LoginController@logout')->name('auth.logout');
 
 //user route
-Route::get('user/dashboard','UserDashboardController@dashboard')->name('user.dashboard');
+Route::match(['get', 'post'],'user/dashboard','UserDashboardController@dashboard')->name('user.dashboard');
+Route::get('user/galleries','UserDashboardController@user_galleries')->name('user.galleries');

@@ -173,6 +173,7 @@
                         <div class="masonry-grid">
                             <div id="three-columns" data-columns>
                                 <!-- GALLERY 1 -->
+                                
                                  <div id="gallery3" class="grid-container">
                                     <div class="grid-img">
                                         <a href="#" class="gallery photo">

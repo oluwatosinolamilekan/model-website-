@@ -17,6 +17,7 @@ class CreateGalleriesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('images');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

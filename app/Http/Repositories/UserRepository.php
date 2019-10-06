@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use Mail;
 use Auth;
-use App\Models\{User,PasswordReset};
+use App\Models\{User,PasswordReset,Gallery};
 use Cloudder;
 
 class UserRepository
@@ -66,4 +66,6 @@ class UserRepository
         $models_profile = User::where('slug',$slug)->firstOrFail();
         return $models_profile;
     }
+
+    
 }

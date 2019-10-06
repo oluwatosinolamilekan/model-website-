@@ -6,17 +6,47 @@ use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use Mail;
 use Auth;
-use App\Models\{User};
+use App\Models\{User,Gallery};
 use Cloudder;
-
+use DB;
 class UserDashboardRepository
 {
 
-	public function index()
+	public function upload_picture($request)
 	{
-		
+		try {
+			 DB::beginTransaction();
+			 $date = strtotime(date("Y-m-d H:i:s"));
+			 $files = $request->file('images');
+			 foreach ($files as $key => $file) 
+			 {
+			 	$image = new Gallery;
+                Cloudder::upload($file, null);
+                $publicId = Cloudder::show(Cloudder::getPublicId(), ["width" => width, "height"=>height]);
+                $file_size = $file->getClientSize();
+			 	$image->user_id = Auth::id();
+			 	$image->images = $publicId;
+                $image->save();
+			 }
+			 dd($image);
+			 if ($image) {
+			 	DB::commit();
+			 	return true;
+			 }else{
+			 	DB::rollback();
+			 	return false;
+			 }
+			
+		} catch (\Exception $e) {
+			//return $e->getMessage();
+		}
 	}
 
-	
+	public function user_galleries()
+    {
+    	$user_id = Auth::id();
+    	$galleries = Gallery::where('user_id',$user_id)->paginate(20);
+    	return $galleries;
+    }
 
 }

@@ -12,10 +12,10 @@
         <div class="grid">
             <div class="unit half">
                 <!-- CONTACT FORM -->
-                <form class="form-box" action="{{route('contact')}}" method="post" enctype="multipart/form-data">
+                <form class="form-box" action="{{route('user.dashboard')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <label>Images:</label>
-                    <input type="file" name="image[]" id="senderName" required="required" maxlength="50" />
+                    <input type="file" name="images[]" required="required" multiple/>
                     
                     <input type="submit" id="sendMessage" name="sendMessage" value="Upload" />
                 </form>
