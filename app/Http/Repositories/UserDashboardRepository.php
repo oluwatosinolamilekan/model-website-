@@ -15,13 +15,13 @@ class UserDashboardRepository
 	public function upload_picture($request)
 	{
 		DB::beginTransaction();
-			$date = strtotime(date("Y-m-d H:i:s"));
 			$files = $request->file('images');
 			foreach ($files as $file) {
 				$image = new Gallery;
 				Cloudder::upload($file, null);
 				list($width, $height) = getimagesize($file);
-				$publicId = Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+				$publicId = Cloudder::show(Cloudder::getPublicId());
+				// $publicId = Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
 				$file_size = $file->getClientSize();
 				$image->user_id = Auth::id();
 				$image->images = $publicId;

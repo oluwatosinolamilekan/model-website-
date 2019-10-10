@@ -40,7 +40,7 @@
         <main id="main">
             <!-- PAGE TITLE -->
             <div id="page-title">
-                <h1><span>Galleries</span></h1>
+                <h1><span>Models</span></h1>
             </div>
             <!-- PAGE CONTAINER -->
             <div id="page-container">
