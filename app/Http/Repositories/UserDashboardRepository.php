@@ -20,8 +20,7 @@ class UserDashboardRepository
 				$image = new Gallery;
 				Cloudder::upload($file, null);
 				list($width, $height) = getimagesize($file);
-				$publicId = Cloudder::show(Cloudder::getPublicId());
-				// $publicId = Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+				$publicId = Cloudder::show(Cloudder::getPublicId(), ["width" => 760, "height"=>500]);
 				$file_size = $file->getClientSize();
 				$image->user_id = Auth::id();
 				$image->images = $publicId;

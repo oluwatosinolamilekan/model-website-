@@ -18,16 +18,16 @@
                 <!-- MODEL CAROUSEL -->
                 <div id="model-gallery" class="owl-carousel">
                     <!-- IMAGE -->
-                    @if(count($models_profile->gallaries) !== 0)
+                    @if($models_profile->gallaries)
                     
-                    @foreach($models_profile->gallaries->take(4) as $gallery)
-                    <div class="ombre-carousel">
-                        <a href="{{asset('frontend/images/photos/model1.jpg')}}" class="gallery photo" data-title="Lorem Ipsum Dolor">
-                            <img src="{{ $gallery->images }}" alt="" />
-                        </a>
-                    </div>
-                    @endforeach
-                    @else
+                        @foreach($models_profile->gallaries->take(4) as $gallery)
+                        <div class="ombre-carousel">
+                            <a href="{{ $gallery->images }}" class="gallery photo" data-title="{{$models_profile->first_name}}">
+                                <img src="{{ $gallery->images }}"  alt="" />
+                            </a>
+                        </div>
+                        @endforeach
+                        @else
 
                     @endif
                     
