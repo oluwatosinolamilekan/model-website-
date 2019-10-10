@@ -28,7 +28,7 @@
     <![endif]-->
     <!-- NOSCRIPT -->
 <noscript>
-    <link href="css/nojs.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('frontend/css/nojs.css')}}" rel="stylesheet" type="text/css">
 </noscript>
 </head>
 

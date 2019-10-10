@@ -54,19 +54,6 @@
                             </div>
                         </li>
                     </ul>
-                    <!-- SOCIAL ICONS -->
-                    <ul class="social-icons model-social">
-                        <li>
-                            <a href="#" class="fa fa-facebook-f tooltip-pink" title="Facebook">Facebook</a>
-                        </li>
-                        <li>
-                            <a href="#" class="fa fa-twitter tooltip-pink" title="Twitter">Twitter</a>
-                        </li>
-                        <li>
-                            <a href="#" class="fa fa-instagram tooltip-pink" title="Instagram">Instagram</a>
-                        </li>
-
-                    </ul>
                 </div>
             </div>
         </div>

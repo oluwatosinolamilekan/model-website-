@@ -19,36 +19,33 @@ class UserDashboardController extends Controller
     {
     	if ($request->isMethod('post')) 
     	{
-    		$validator = Validator::make($request->all(), [
-                'images' => 'required',
-            ]);
-            if ($validator->fails()) {
-                return back()
-                ->withErrors($validator)
-                ->withInput();
-            }
+			try {
+				$validator = Validator::make($request->all(), [
+					'images' => 'required',
+				]);
+				
+			} catch (\Exception $e) {
+            	return back()->with('error',$e->getMessage());
+			}
+    	
             try {
             	if($validator)
 	    		{
-	                    $user = $this->user->upload_picture($request);
-	                    if($user == false){
-	                        return Redirect::back()->with('error', 'image wasnt upload');
-	                    }
-	                    return redirect()->back()->with('success','Image Uploaded');
-
-	                }
-	                else{
-	                    return Redirect::back()->withErrors($validator);
-	                }
-            	
+					$user = $this->user->upload_picture($request);
+					if($user == true){
+						// return Redirect::back()->with('error', 'image wasnt upload');
+						return redirect()->back()->with('success','Image Uploaded');
+					}
+					return redirect()->back()->with('error','Image Was\nt upload to our server');
+	            }
             } catch (\Exception $e) {
             	return back()->with('error',$e->getMessage());
             }
     	}
-    	
+
 	    $active_pictures_count = $this->user->activePicturesCount();
-	    $deactive_pictures_count= $this->user->deactivePicturesCount();
-	    $total_pictures= $this->user->totalPictures();
+	    $deactive_pictures_count = $this->user->deactivePicturesCount();
+	    $total_pictures = $this->user->totalPictures();
     	return view('users.dashboard',compact('active_pictures_count','deactive_pictures_count','total_pictures'));
     }
 

@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <!-- FAVICON -->
-    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="{{asset('frontend/images/favicon.ico')}}" rel="shortcut icon" type="image/x-icon" />
     <!-- CSS FILES -->
     <link href="{{asset('frontend/css/normalize.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/css/fakeloader.css')}}" rel="stylesheet" type="text/css">

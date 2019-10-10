@@ -14,39 +14,35 @@ class UserDashboardRepository
 
 	public function upload_picture($request)
 	{
-		try {
-			 DB::beginTransaction();
-			 $date = strtotime(date("Y-m-d H:i:s"));
-			 $files = $request->file('images');
-			 foreach ($files as $file) 
-			 {
-			 	$image = new Gallery;
-                Cloudder::upload($file, null);
-                list($width, $height) = getimagesize($file);
-                $publicId = Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
-                $file_size = $file->getClientSize();
-			 	$image->user_id = Auth::id();
-			 	$image->images = $publicId;
-			 	$image->status = 0;
-                $image->save();
-			 }
-			 if ($image) {
-			 	DB::commit();
-			 	return true;
-			 }else{
-			 	DB::rollback();
-			 	return false;
-			 }
-			
-		} catch (\Exception $e) {
-			//return $e->getMessage();
+		DB::beginTransaction();
+			$date = strtotime(date("Y-m-d H:i:s"));
+			$files = $request->file('images');
+			foreach ($files as $file) {
+				$image = new Gallery;
+				Cloudder::upload($file, null);
+				list($width, $height) = getimagesize($file);
+				$publicId = Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+				$file_size = $file->getClientSize();
+				$image->user_id = Auth::id();
+				$image->images = $publicId;
+				$image->status = 0;
+				$image->save();
+			}
+			if ($image) {
+				DB::commit();
+				return true;
+			}
+			else{
+				DB::rollback();
+				return false;
 		}
+		
 	}
 
 	public function user_galleries()
     {
     	$user_id = Auth::id();
-    	$galleries = Gallery::where('user_id',$user_id)->paginate(20);
+    	$galleries = Gallery::where('user_id',$user_id)->simplePaginate(20);
     	return $galleries;
     }
 
