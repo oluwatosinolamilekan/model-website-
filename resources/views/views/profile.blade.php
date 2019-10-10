@@ -18,39 +18,22 @@
                 <!-- MODEL CAROUSEL -->
                 <div id="model-gallery" class="owl-carousel">
                     <!-- IMAGE -->
+                    @if(count($models_profile->gallaries) !== 0)
+                    
+                    @foreach($models_profile->gallaries->take(4) as $gallery)
                     <div class="ombre-carousel">
-                        <a href="{{asset('frontend/images/photos/model1.jpg" class="gallery photo')}}" data-title="Lorem Ipsum Dolor">
-                            <img src="{{asset('frontend/images/photos/model-slider1.jpg')}}" alt="" />
+                        <a href="{{asset('frontend/images/photos/model1.jpg')}}" class="gallery photo" data-title="Lorem Ipsum Dolor">
+                            <img src="{{ $gallery->images }}" alt="" />
                         </a>
                     </div>
-                    <!-- IMAGE -->
-                    <div class="ombre-carousel">
-                        <a href="{{asset('frontend/images/photos/model6.jpg" class="gallery photo')}}" data-title="Lorem Ipsum Dolor">
-                            <img src="{{asset('frontend/images/photos/model-slider2.jpg')}}" alt="" />
-                        </a>
-                    </div>
-                    <!-- IMAGE -->
-                    <div class="ombre-carousel">
-                        <a href="{{asset('frontend/images/photos/model3.jpg" class="gallery photo')}}" data-title="Lorem Ipsum Dolor">
-                            <img src="{{asset('frontend/images/photos/model-slider3.jpg')}}" alt="" />
-                        </a>
-                    </div>
-                    <!-- IMAGE -->
-                    <div class="ombre-carousel">
-                        <a href="{{asset('frontend/images/photos/model4.jpg" class="gallery photo')}}" data-title="Lorem Ipsum Dolor">
-                            <img src="{{asset('frontend/images/photos/model-slider4.jpg')}}" alt="" />
-                        </a>
-                    </div>
+                    @endforeach
+                    @else
+
+                    @endif
+                    
+                   
                 </div>
-                <!-- EXPERIENCES -->
-                {{-- <h3 class="border">Education & Qualification</h3> --}}
-                {{-- <div class="experience-box">
-                    <div class="experience-title">
-                        <h5>Model Fashion Academy</h5>
-                        <p>2006 – 2010</p>
-                    </div>
-                    <p>Pariatur ex malis hic probant qui nulla. Aut est irure incurreret a appellat si quamquam hic ne ullamco coniunctione, a noster expetendis. Ea iudicem exquisitaque ab nisi commodo sed malis fore. Singulis cohaerescant e mandaremus, o enim adipisicing ad in quem consectetur, se amet commodo ne sed mentitum ad nostrud iis se quis eiusmod, senserit minim a pariatur comprehenderit, ubi proident et senserit.</p>
-                </div> --}}
+               
                 <div class="experience-box">
                     <div class="experience-title">
                         <h5>Bachelor of Fine Arts</h5>

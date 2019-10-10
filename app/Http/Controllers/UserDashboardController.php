@@ -33,10 +33,9 @@ class UserDashboardController extends Controller
 	    		{
 					$user = $this->user->upload_picture($request);
 					if($user == true){
-						// return Redirect::back()->with('error', 'image wasnt upload');
 						return redirect()->back()->with('success','Image Uploaded');
 					}
-					return redirect()->back()->with('error','Image Was\nt upload to our server');
+					return redirect()->back()->with('error','Image Was\'nt upload to our server');
 	            }
             } catch (\Exception $e) {
             	return back()->with('error',$e->getMessage());
@@ -52,6 +51,12 @@ class UserDashboardController extends Controller
     public function user_galleries()
     {
 	   $galleries = $this->user->user_galleries();
+	   return view('users.user_gallery',compact('galleries'));
+	}
+	
+	public function user_slider()
+    {
+	   $galleries = $this->user->user_slider();
 	   return view('users.user_gallery',compact('galleries'));
     }
 

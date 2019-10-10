@@ -33,13 +33,13 @@ class ViewController extends Controller
 
     public function models()
     {
-        $models = User::latest()->paginate(20);
+        $models = User::latest()->simplePaginate(20);
       return view('views.models',compact('models'));
     }
 
     public function profile($slug)
     {
-        $models_profile  = $this->user->profile($slug);
+        $models_profile = $this->user->profile($slug);
         return view('views.profile',compact('models_profile'));
     }
 
@@ -81,49 +81,7 @@ class ViewController extends Controller
         return view('views.contact');
     }
 
-   
-
     
-
-
-    public function upload_picture(Request $request)
-    {
-        if ($request->isMethod('post')) {
-            try {
-                if ($request->hasFile('images')) {
-                        $date = strtotime(date("Y-m-d H:i:s"));
-                        $reference = $date.mt_rand(1, 9);
-                        $answer = new Answer;
-                        $answer->user_id = $request->user_id;
-                        $answer->subject = $request->subject;
-                        $answer->body = $request->body;
-                        $answer->slug = uniqid($date);
-                        $answer->read = 0;
-                        $answer->save();
-                        $user = User::where('id', $answer->user_id)->first();
-                        $user->notify(new Ans($answer));
-                        $files = $request->file('images');
-                            foreach ($files as $file) {
-                                $image = new Answer_image();
-                                Cloudder::upload($file, null);
-                                list($width, $height) = getimagesize($file);
-                                $publicId = Cloudder::show(Cloudder::getPublicId(), ["width" => width, "height"=>height]);
-                                $file_size = $file->getClientSize();
-                                $image->answer_id = $answer->id;
-                                $image->images = $publicId;
-                                $image->save();
-                            }
-                }
-    
-            } catch (\Exception $e) {
-                return back()->with('error', $e->getMessage());
-                
-            }
-        }
-    }
-
-   
-
     public function token ($token)
     {
          $passwordReset = PasswordReset::where('token', $token)->first();

@@ -19,13 +19,13 @@ class User extends Authenticatable
         'first_name',
         'last_name', 
         'email',
-         'gender',
-         'dob',
-         'phone',
-         'address',
-         'city',
-         'state',
-         'country',
+        'gender',
+        'dob',
+        'phone',
+        'address',
+        'city',
+        'state',
+        'country',
     ];
 
     /**
@@ -45,4 +45,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get all of the user's gallaries.
+     */
+
+    // public function gallaries()
+    // {
+    //     return $this->belongsTo('App\Models\Gallery', 'user_id');
+        
+    // }
+
+    public function gallaries()
+    {
+        return $this->hasMany('App\Models\Gallery','user_id');
+    }
 }

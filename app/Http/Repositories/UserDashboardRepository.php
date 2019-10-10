@@ -74,6 +74,8 @@ class UserDashboardRepository
     {
     	$galleries = Gallery::where('user_id',Auth::id())->Deactive()->simplePaginate(20);
     	return $galleries;
-    }
+	}
+	
+	
 
 }

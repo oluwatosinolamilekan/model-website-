@@ -66,12 +66,11 @@
                                     </h5>
                                     </div>
                                     <a class="arrow-button" href="{{route('profile',$model->slug)}}">
-                                            {{$model->first_name." ".$model->last_name}}">View Gallery</a>
+                                            View Gallery
+                                    </a>
                                 </div>
                                 <!-- GALLERY 2 -->
                                 @endforeach
-                                
-                                
                             </div>
                         </div>
                         <!-- PAGER -->
@@ -107,7 +106,4 @@
     <!-- CUSTOM JS -->
     <script type="text/javascript" src="{{asset('frontend/js/custom.js')}}"></script>
 </body>
-
-
-
 </html>
