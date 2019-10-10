@@ -74,6 +74,58 @@ class UserDashboardRepository
     	$galleries = Gallery::where('user_id',Auth::id())->Deactive()->simplePaginate(20);
     	return $galleries;
 	}
+
+	public function update_profile($request)
+	{
+		DB::beginTransaction();
+
+		$user_id = Auth::id();
+
+		$update = User::where('id',$user_id)->update([
+			'height' => $request->height,
+			'hair' => $request->hair,
+			'eye' => $request->eye,
+			'bust' => $request->bust,
+			'waist' => $request->waist,
+			'shoe' => $request->shoe,
+
+			'dob' => $request->dob,
+			'address' => $request->address,
+			'city' => $request->city,
+			'state' => $request->state,
+			'country' => $request->country,
+		]);
+
+		if ($update) {
+			DB::commit();
+			return true;
+		}else{
+			DB::rollback();
+			return false;
+		}
+	}
+
+	public function update_profile_image($request)
+	{
+		DB::beginTransaction();
+
+		$user_id = Auth::id();
+
+		$update_pic = User::where('id',$user_id)->update([
+			'profile' => $image,
+		]);
+
+		if ($update_pic) {
+			DB::commit();
+			return true;
+		}else{
+			DB::rollback();
+			return false;
+		}
+
+	}
+
+
 	
 	
 

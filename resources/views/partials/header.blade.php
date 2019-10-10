@@ -44,7 +44,7 @@
                             <a href="{{route('user.dashboard')}}">Dashboard</a>
                         </li>
                         <li>
-                            <a href="{{route('auth.logout')}}">Logout</a>
+                            <a href="{{route('logout')}}">Logout</a>
                         </li>
 
                         @endif

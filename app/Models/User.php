@@ -26,6 +26,13 @@ class User extends Authenticatable
         'city',
         'state',
         'country',
+        'height',
+        'hair',
+        'eye',
+        'bust',
+        'waist',
+        'shoe',
+        'profile_image',
     ];
 
     /**

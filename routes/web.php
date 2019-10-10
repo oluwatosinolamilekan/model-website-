@@ -28,12 +28,26 @@ Route::get('/profile/{slug}','ViewController@profile')->name('profile');
 Route::match(['get', 'post'],'auth/login','LoginController@login')->name('login');
 Route::match(['get', 'post'],'auth/register','UserController@register')->name('register');
 Route::match(['get', 'post'],'auth/forget-password','LoginController@forget_password')->name('forget_password');
-Route::get('auth/logout','LoginController@logout')->name('auth.logout');
+Route::get('auth/logout','LoginController@logout')->name('logout');
+
 
 //user route
 Route::group(['prefix' => 'user','middleware' => 'user'], function() {
     Route::match(['get', 'post'],'/dashboard','UserDashboardController@dashboard')->name('user.dashboard');
 	Route::get('/galleries','UserDashboardController@user_galleries')->name('user.galleries');
+});
+
+
+//login
+Route::match(['get', 'post'],'/login/admin','AdminController@login')->name('admin.login');
+
+
+// admin Route
+Route::group(['prefix' => 'admin','middleware' => 'admin'], function() {
+    Route::get('dashboard','AdminDashboardController@index')->name('admin.dashboard');
+    Route::get('/contact','AdminDashboardController@contact')->name('admin.contact');
+    Route::get('/delete_contact/{id}','AdminDashboardController@delete_contact')->name('admin.contact_delete');
+
 });
 
 
