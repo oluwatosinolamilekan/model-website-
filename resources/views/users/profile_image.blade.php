@@ -21,7 +21,13 @@
                 </form>
             </div>
             <div class="unit half">
+                @if($user_details->gender == 'male' && $user_details->profile_image === null )
+                    <img src="{{asset('frontend/images/maleunknow.jpg')}}" class="flex-img" alt="" />
+                @elseif($user_details->gender == 'female' && $user_details->profile_image === null)
+                    <img src="{{asset('frontend/images/ladyunknow.jpg')}}" class="flex-img" alt="" />
+                @elseif($user_details->profile_image !== null)
                 <img src="{{$user_details->profile_image}}" class="flex-img" alt="" />
+                @endif
             </div>
         </div>
     </div>

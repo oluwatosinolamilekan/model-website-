@@ -55,8 +55,16 @@
                                  <div id="gallery3" class="grid-container">
                                     <div class="grid-img">
                                         <a href="{{route('profile',$model->slug)}}" class="">
-                                            <img src="{{asset('frontend/images/photos/gallery3.jpg')}}" alt="" />
+                                            @if($model->gender == 'male' && $model->profile_image === null )
+                                                    <img src="{{asset('frontend/images/maleunknow.jpg')}}" alt="" />
+                                                @elseif($model->gender == 'female' && $model->profile_image === null)
+                                                        <img src="{{asset('frontend/images/ladyunknow.jpg')}}" alt="" />
+                                                @elseif($model->profile_image !== null)
+                                                    <img src="{{$model->profile_image}}" alt="" />
+                                            @endif
+                                            {{-- <img src="{{asset('frontend/images/photos/gallery3.jpg')}}" alt="" /> --}}
                                         </a>
+                                       
                                     </div>
                                     <div class="grid-content">
                                         <h5>
