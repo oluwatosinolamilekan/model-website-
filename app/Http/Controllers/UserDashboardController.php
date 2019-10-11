@@ -89,4 +89,32 @@ class UserDashboardController extends Controller
 		return view('users.profile_image',compact('user_details'));
 	}
 
+	public function edit_profile(Request $request)
+	{
+		if ($request->isMethod('post'))
+		{
+			try {
+				$validator = Validator::make($request->all(), [
+					'profile_image' => 'required',
+				]);
+			} catch (\Exception $e) {
+            	return back()->with('error',$e->getMessage());
+			}
+    	
+            try {
+            	if($validator)
+	    		{
+					$user = $this->user->update_profile($request);
+					if($user == true){
+						return redirect()->back()->with('success','Profile was Successfully Edited');
+					}
+					// return redirect()->back()->with('error','Image Was\'nt upload to our server');
+	            }
+            } catch (\Exception $e) {
+            	return back()->with('error',$e->getMessage());
+            }
+		}
+		return view('user.edit_profile');
+	}
+
 }

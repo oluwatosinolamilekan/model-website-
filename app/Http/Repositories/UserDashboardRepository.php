@@ -120,20 +120,20 @@ class UserDashboardRepository
 
 		$user_id = Auth::id();
 
-		$update = User::where('id',$user_id)->update([
-			'height' => $request->height,
-			'hair' => $request->hair,
-			'eye' => $request->eye,
-			'bust' => $request->bust,
-			'waist' => $request->waist,
-			'shoe' => $request->shoe,
-
-			'dob' => $request->dob,
-			'address' => $request->address,
-			'city' => $request->city,
-			'state' => $request->state,
-			'country' => $request->country,
-		]);
+		$update = User::where('id',$user_id)->first();
+		dd($update);
+		$update->height = $request->height;
+		$update->hair = $request->hair;
+		$update->eye = $request->eye;
+		$update->bust = $request->bust;
+		$update->waist = $request->waist;
+		$update->shoe = $request->shoe;
+		$update->dob = $request->dob;
+		$update->address = $request->address;
+		$update->city = $request->city;
+		$update->state = $request->state;
+		$update->country = $request->country;
+		$update->save();
 
 		if ($update) {
 			DB::commit();
