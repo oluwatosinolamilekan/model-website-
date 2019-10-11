@@ -12,6 +12,11 @@
 */
 
 Route::get('/test', function () {
+    $random = App\Models\User::where([
+        'role_id' => 3,
+        'profile_image' => null
+        ])->inRandomOrder()->take(4)->get();
+    		return $random;
     return view('views.test');
 });
 
@@ -46,9 +51,12 @@ Route::match(['get', 'post'],'/login/admin','AdminController@login')->name('admi
 Route::group(['prefix' => 'admin','middleware' => 'admin'], function() {
     Route::get('all-admins','AdminDashboardController@all_admins')->name('all_admins');
     Route::get('all-models','AdminDashboardController@all_models')->name('all_models');
+    Route::get('all-galleries','AdminDashboardController@galleries')->name('all_galleries');
     Route::get('dashboard','AdminDashboardController@index')->name('admin.dashboard');
     Route::get('/contact','AdminDashboardController@contact')->name('admin.contact');
-    Route::get('/delete_contact/{id}','AdminDashboardController@delete_contact')->name('admin.contact_delete');
+    Route::get('/delete-contact/{id}','AdminDashboardController@delete_contact')->name('admin.contact_delete');
+    Route::get('/delete-/models/{id}','AdminDashboardController@delete_model')->name('admin.delete_model');
+
 
 }); 
 

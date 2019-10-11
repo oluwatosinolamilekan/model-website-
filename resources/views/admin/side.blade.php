@@ -15,6 +15,13 @@
                    <span>All Models</span>
               </a>
            </li>
+
+           <li>
+                <a href="{{route('all_galleries')}}" class="waves-effect"><i class="fas fa-file-image
+                    "></i>
+                       <span>Galleries</span>
+                  </a>
+               </li>
           
              <li>
                 <a href="{{route('all_admins')}}">

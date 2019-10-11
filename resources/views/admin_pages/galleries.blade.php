@@ -12,6 +12,7 @@
                         <div class="page-title-box">
                             <h4 class="page-title">Data Table</h4>
                             <ol class="breadcrumb">
+                                
                             </ol>
                             
                         </div>
@@ -25,48 +26,32 @@
                     <div class="col-12">
                         <div class="card m-b-20">
                             <div class="card-body">
-                               
-                                <h4 class="mt-0 header-title">Models Datatable</h4>
                                 <table id="datatable" class="table table-bordered  dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
                                     <tr>
                                         <th>S/N</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Date Sent</th>
-                                        <th>View</th>
+                                        <th>Model</th>
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($all_models as $key => $model)
+                                    @foreach ($galleries as $key => $gallery)
                                         <tr>
                                             <td>
                                                 {{ ++$key }}
                                             </td>
                                             <td>
-                                            {{ $model->first_name."".$model->last_name }}
-
+                                                {{ $gallery->first_name."".$gallery->last_name }}
                                             </td>
                                             <td>
-                                                {{ ($model->email) }}
-                                            </td>
-                                             
-                                             <td>
-                                                {{ Carbon\Carbon::parse($model->created_at)->toDayDateTimeString() }}
-                                            </td>
-                                            <td>
-                                                <a href="#myModal{{$model->id}}" data-toggle="modal" class="btn btn-success waves-effect waves-light">
-                                                        <i class="fab fa-product-hunt"></i>
+                                                <a href="#myModal{{$gallery->id}}" data-toggle="modal"  class="btn btn-success waves-effect waves-light">
+                                                        <i class="fas fa-folder-open"></i>
                                                 </a>
                                             </td>
-                                            <td>
-                                                <a href="{{route('admin.delete_model',$model->id)}}" onclick="return confirm('Are you sure you want to delete this?')" class="btn btn-danger waves-effect waves-light">
-                                                     <i class="far fa-trash-alt"></i>
-                                                </a>
-                                            </td>
+                                            
+                                            
                                         </tr>
-                                        {{-- @include('admin_pages.contactmodal') --}}
+                                        @include('admin_pages.galleriesmodal')
                                     @endforeach
                                     </tbody>
                                 </table>

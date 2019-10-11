@@ -14,6 +14,6 @@ class Gallery extends Model
   
     public function user()
     {
-        return $this->belongsTo('App\Models\User')->Active();
+        return $this->belongsTo('App\Models\User');
     }
 }

@@ -62,7 +62,26 @@ class UserRepository
         $models_profile = User::where('slug',$slug)->firstOrFail();
         return $models_profile;
 	}
+
+	public function slider_image()
+	{
+		$galleries = Gallery::where([
+			'status' => 1,
+			'slider' => 1
+		])->take(3)->get();
+
+		return $galleries;
+	}
 	
+
+	public function random_model()
+	{
+		$random = User::where([
+			'role_id' => 3,
+			'profile_image' != ''
+			])->inRandomOrder()->take(4)->get();
+		return $random;
+	}
 	
 
     

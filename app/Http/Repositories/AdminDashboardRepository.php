@@ -25,9 +25,26 @@ class AdminDashboardRepository
 			'role_id' => 3,
 			'id' => $id 
 		])->delete();
-		
+
 		return $model;
 	}
+
+	public function galleries()
+	{
+		$galleries = Gallery::where('status',1)
+		->join('users', 'users.id', '=', 'galleries.user_id')
+		->orderBy('galleries.created_at','asc')
+		->select([
+			'galleries.id',
+			'first_name',
+			'last_name',
+			'images'
+		])
+		->get();
+		return $galleries; 
+	}
+
+	
 
 	public function count_all_models()
 	{
@@ -122,4 +139,23 @@ class AdminDashboardRepository
 		
 
 	}
+
+	public function slider($id)
+	{
+		DB::beginTransaction();
+
+		$galleries = Gallery::find($id);
+		$galleries->slider = 1;
+		$galleries->save();
+
+		if ($galleries) {
+			DB::commit();
+			return true;
+		}else{
+			DB::rollback();
+			return false;
+		}
+	}
+
+	
 }

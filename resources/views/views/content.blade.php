@@ -8,43 +8,7 @@
 @endsection
 <main id="main">
             <!-- SLIDER -->
-            <div id="slider-container">
-                <div id="home-slider">
-                    <!-- SLIDE -->
-                    <div>
-                        <img src="{{asset('frontend/images/photos/slide2.jpg')}}" data-animation="image-zoom scale-right" alt="">
-                        <!-- SLIDE TITLE -->
-                        <div class="ns_slideContent">
-                            <div class="top-left">
-                                <h1 class="animatedmedium slideInLeft">Welcome to Ombre</h1>
-                                <p class="animated slideInLeft"><span>Legam e officia ita nae</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- SLIDE -->
-                    <div>
-                        <img src="{{asset('frontend/images/photos/slide3.jpg')}}" data-animation="image-zoom scale-right" alt="">
-                        <!-- SLIDE TITLE -->
-                        <div class="ns_slideContent">
-                            <div class="bottom-right">
-                                <h1 class="animatedmedium slideInRight">Dolore admod</h1>
-                                <p class="animated slideInRight"><span>Se quis incididunt appellat summis</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- SLIDE -->
-                    <div>
-                        <img src="{{asset('frontend/images/photos/slide1.jpg')}}" data-animation="image-zoom scale-left" alt="">
-                        <!-- SLIDE TITLE -->
-                        <div class="ns_slideContent">
-                            <div class="top-right">
-                                <h1 class="animatedmedium slideInRight">Ut eram iudicem</h1>
-                                <p class="animated slideInRight"><span>Cupidatat velit fugiat summis ab dolor</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @include('views.carousel')
             <!-- PAGE CONTAINER -->
             <div id="page-container">
                 <!-- GRID -->

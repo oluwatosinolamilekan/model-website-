@@ -56,6 +56,19 @@ class AdminDashboardController extends Controller
         return view('admin_pages.all_admins',compact('all_admins'));
     }
 
+    public function galleries()
+    {
+        $galleries = $this->admin->galleries();
+        // return $galleries;
+        return view('admin_pages.galleries',compact('galleries'));
+    }
+
+    public function slider($id)
+    {
+        $gallery = $this->admin->slider($id);
+        return redirect()->back()->with('sucess','Added to slider');
+    }
+
 
     public function contact()
     {
