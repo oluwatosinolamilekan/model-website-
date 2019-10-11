@@ -19,22 +19,5 @@
                 <!-- WIDGET 3 -->
               
             </div>
-            <div class="footer-info">
-                <!-- COPYRIGHT -->
-                <div class="credits">Copyright Egemenerd</div>
-                <!-- SOCIAL ICONS -->
-                <ul class="social-icons footer-social">
-                    <li>
-                        <a href="#" class="fa fa-facebook-f tooltip-pink" title="Facebook">Facebook</a>
-                    </li>
-                    <li>
-                        <a href="#" class="fa fa-twitter tooltip-pink" title="Twitter">Twitter</a>
-                    </li>
-                  
-                    <li>
-                        <a href="#" class="fa fa-instagram tooltip-pink" title="Instagram">Instagram</a>
-                    </li>
-                   
-                </ul>
-            </div>
-        </footer>
+            
+</footer>
