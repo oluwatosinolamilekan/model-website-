@@ -12,7 +12,7 @@
                         <div class="page-title-box">
                             <h4 class="page-title">Data Table</h4>
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item active">Contact Data Table</li>
+                                <li class="breadcrumb-item active">Admins Data Table</li>
                             </ol>
                             
                         </div>
@@ -27,7 +27,7 @@
                         <div class="card m-b-20">
                             <div class="card-body">
                                
-                                <h4 class="mt-0 header-title">Contact Datatable</h4>
+                                <h4 class="mt-0 header-title">Admin Datatable</h4>
                                 <table id="datatable" class="table table-bordered  dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
                                     <tr>
@@ -35,39 +35,33 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Date Sent</th>
-                                        <th>View</th>
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($contacts as $contact)
+                                    @foreach ($all_admins as $key => $admin)
                                         <tr>
                                             <td>
-                                                {{ ($contact->id) }}
+                                                {{ ++$key }}
                                             </td>
                                             <td>
-                                            {{ ($contact->name) }}
+                                            {{ $admin->first_name."".$admin->last_name }}
 
                                             </td>
                                             <td>
-                                                {{ ($contact->email) }}
+                                                {{ $admin->email }}
                                             </td>
                                              
                                              <td>
-                                                {{ ($contact->created_at->diffForHumans()) }}
+                                                {{ Carbon\Carbon::parse($admin->created_at)->toDayDateTimeString() }}
                                             </td>
+                                           
                                             <td>
-                                                <a href="#myModal{{$contact->id}}" data-toggle="modal" class="btn btn-success waves-effect waves-light">
-                                                        <i class="fab fa-product-hunt"></i>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="{{route('admin.contact_delete',$contact->id)}}" onclick="return confirm('Are you sure you want to delete this?')" class="btn btn-danger waves-effect waves-light">
+                                                <a href="{{route('admin.contact_delete',$admin->id)}}" onclick="return confirm('Are you sure you want to delete this?')" class="btn btn-danger waves-effect waves-light">
                                                      <i class="far fa-trash-alt"></i>
                                                 </a>
                                             </td>
                                         </tr>
-                                        @include('Admin.contactmodal')
                                     @endforeach
                                     </tbody>
                                 </table>

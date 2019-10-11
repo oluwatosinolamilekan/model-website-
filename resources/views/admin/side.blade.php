@@ -16,12 +16,11 @@
               </a>
            </li>
           
-            
              <li>
-                <a href="#">
-              <i class="fa fa-search"></i>
-                  <span>Search Questions</span>
-              </a>
+                <a href="{{route('all_admins')}}">
+                <i class="fa fa-users"></i>
+                    <span>All Admins</span>
+                </a>
             </li>
              <li>
              <a href="{{route('admin.contact')}}">

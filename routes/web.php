@@ -44,10 +44,11 @@ Route::match(['get', 'post'],'/login/admin','AdminController@login')->name('admi
 
 // admin Route
 Route::group(['prefix' => 'admin','middleware' => 'admin'], function() {
+    Route::get('all-admins','AdminDashboardController@all_admins')->name('all_admins');
     Route::get('dashboard','AdminDashboardController@index')->name('admin.dashboard');
     Route::get('/contact','AdminDashboardController@contact')->name('admin.contact');
     Route::get('/delete_contact/{id}','AdminDashboardController@delete_contact')->name('admin.contact_delete');
 
-});
+}); 
 
 
