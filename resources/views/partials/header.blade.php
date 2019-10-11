@@ -32,6 +32,7 @@
                         <li>
                             <a href="{{route('index')}}">Home</a>
                         </li>
+                        
                         @if(!Auth::check())
                         <li>
                             <a href="{{route('login')}}">Login</a>
@@ -40,6 +41,20 @@
                             <a href="{{route('register')}}">Sign Up</a>
                         </li>
                         @else
+                        <li>
+                            <a href="#">Dashboard</a>
+                            <ul>
+                                <li>
+                                    <a href="about.html">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('upload_profile_image')}}">Upload Profile(pics)</a>
+                                </li>
+                                <li>
+                                    <a href="layout.html">Edit Profile</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li>
                             <a href="{{route('user.dashboard')}}">Dashboard</a>
                         </li>

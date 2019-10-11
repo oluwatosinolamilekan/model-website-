@@ -64,7 +64,26 @@ class UserDashboardController extends Controller
 	{
 		if ($request->isMethod('post')) 
 		{
-			
+			try {
+				$validator = Validator::make($request->all(), [
+					'profile_image' => 'required',
+				]);
+			} catch (\Exception $e) {
+            	return back()->with('error',$e->getMessage());
+			}
+    	
+            try {
+            	if($validator)
+	    		{
+					$user = $this->user->update_profile_image($request);
+					if($user == true){
+						return redirect()->back()->with('success','Profile was Uploaded');
+					}
+					return redirect()->back()->with('error','Image Was\'nt upload to our server');
+	            }
+            } catch (\Exception $e) {
+            	return back()->with('error',$e->getMessage());
+            }
 		}
 		return view('users.profile_image');
 	}

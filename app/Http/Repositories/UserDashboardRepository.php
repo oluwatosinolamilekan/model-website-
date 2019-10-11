@@ -109,16 +109,27 @@ class UserDashboardRepository
 	{
 		DB::beginTransaction();
 
+		$image_name = $request->file('profile_image')->getRealPath();
+
+		$name = $request->file('profile_image')->getClientOriginalName();
+
+		list($width, $height) = getimagesize($image_name);
+
+		$image_url = Cloudder::show(Cloudder::getPublicId(), ["width" => 383.33, "height"=>511.09]);
+
 		$user_id = Auth::id();
 
 		$update_pic = User::where('id',$user_id)->update([
-			'profile' => $image,
+			'profile_image' => $image_url,
 		]);
 
 		if ($update_pic) {
+
 			DB::commit();
 			return true;
+
 		}else{
+			
 			DB::rollback();
 			return false;
 		}

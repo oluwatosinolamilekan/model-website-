@@ -12,7 +12,7 @@
         <div class="grid">
             <div class="unit half">
                 <!-- CONTACT FORM -->
-                <form class="form-box" action="{{route('user.dashboard')}}" method="post" enctype="multipart/form-data">
+                <form class="form-box" action="{{route('upload_profile_image')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <label>Profile Images:</label>
                     <input type="file" name="profile_image" required="required" />
