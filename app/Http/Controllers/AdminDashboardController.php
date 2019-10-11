@@ -44,6 +44,12 @@ class AdminDashboardController extends Controller
         return view('admin_pages.all_models',compact('all_models'));
     }
 
+    public function delete_model($id)
+    {
+        $delete_model = $this->admin->delete_model($id);
+        return redirect()->back()->with('success','Model was successfully deleted');
+    }
+
     public function all_admins()
     {
         $all_admins = $this->admin->all_admins();

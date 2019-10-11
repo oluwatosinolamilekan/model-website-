@@ -19,6 +19,16 @@ class AdminDashboardRepository
 		return $all_models;
 	}
 
+	public function delete_model($id)
+	{
+		$model = User::where([
+			'role_id' => 3,
+			'id' => $id 
+		])->delete();
+		
+		return $model;
+	}
+
 	public function count_all_models()
 	{
 		$count_models = User::where('role_id',3)->count();
