@@ -4,7 +4,7 @@
 <main id="main">
     <!-- PAGE TITLE -->
     <div id="page-title">
-        <h1><span>Dashboard</span></h1>
+        <h1><span>Profile Image</span></h1>
     </div>
     <!-- PAGE CONTAINER -->
     <div id="page-container">
@@ -14,13 +14,13 @@
                 <!-- CONTACT FORM -->
                 <form class="form-box" action="{{route('user.dashboard')}}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <label>Images:</label>
+                    <label>Profile Images:</label>
                     <input type="file" name="profile_image" required="required" />
                     
                     <input type="submit" id="sendMessage" name="sendMessage" value="Upload" />
                 </form>
             </div>
-            <div class="unit half">
+            {{-- <div class="unit half">
                 <img src="images/photos/about-small.jpg" class="flex-img" alt="" />
                 <div class="ombre-box">
                     <!-- TABLE -->
@@ -55,7 +55,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </main>

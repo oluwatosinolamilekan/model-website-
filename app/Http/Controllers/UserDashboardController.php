@@ -58,6 +58,15 @@ class UserDashboardController extends Controller
     {
 	   $galleries = $this->user->user_slider();
 	   return view('users.user_gallery',compact('galleries'));
-    }
+	}
+	
+	public function upload_profile_image(Request $request)
+	{
+		if ($request->isMethod('post')) 
+		{
+			
+		}
+		return view('users.profile_image');
+	}
 
 }

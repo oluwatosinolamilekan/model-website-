@@ -31,7 +31,9 @@ Route::get('auth/logout','LoginController@logout')->name('logout');
 //user route
 Route::group(['prefix' => 'user','middleware' => 'user'], function() {
     Route::match(['get', 'post'],'/dashboard','UserDashboardController@dashboard')->name('user.dashboard');
-	Route::get('/galleries','UserDashboardController@user_galleries')->name('user.galleries');
+    Route::get('/galleries','UserDashboardController@user_galleries')->name('user.galleries');
+    Route::match(['get', 'post'],'/profile-image','UserDashboardController@upload_profile_image')->name('upload_profile_image');
+    
 });
 
 
