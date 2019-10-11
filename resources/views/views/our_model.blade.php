@@ -8,7 +8,14 @@
             <figure class="ombre-carousel">
                 <!-- MODEL IMAGE -->
                 <a href="{{route('profile',$model->slug)}}" class="gallery link">
-                    <img src="{{asset('frontend/images/photos/models1-square.jpg')}}" alt="" />
+                    @if(is_null($model->profile_image) && $model->sex == 'male')
+                        <img src="{{asset('frontend/images/maleunknown.jpg')}}" alt="" />
+
+                    @elseif(is_null($model->profile_image) && $model->sex == 'female')
+                        <img src="{{asset('frontend/images/ladyunknown.jpg')}}" alt="" />
+                    @else
+                    <img src="{{$model->profile_image}}" alt="" />
+                    @endif
                 </a>
                 <!-- MODEL INFO -->
                 <figcaption>
