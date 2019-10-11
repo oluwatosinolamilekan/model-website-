@@ -59,7 +59,6 @@
                                             <img src="{{$gallery->images}}" alt="" />
                                         </a>
                                     </div>
-                                    {{-- <a class="arrow-button" href="#">View Gallery</a> --}}
                                 </div>
                                @endforeach
                             </div>
