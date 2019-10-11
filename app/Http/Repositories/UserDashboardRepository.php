@@ -12,6 +12,13 @@ use DB;
 class UserDashboardRepository
 {
 
+	public function user_details()
+	{
+		$user_id = Auth::id();
+
+		$user = User::where('id',$user_id)->first();
+		return $user;
+	}
 	public function upload_picture($request)
 	{
 		DB::beginTransaction();
@@ -129,7 +136,7 @@ class UserDashboardRepository
 			return true;
 
 		}else{
-			
+
 			DB::rollback();
 			return false;
 		}

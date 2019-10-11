@@ -85,7 +85,9 @@ class UserDashboardController extends Controller
             	return back()->with('error',$e->getMessage());
             }
 		}
-		return view('users.profile_image');
+		$user_details = $this->user->user_details();
+		// return $user_details;
+		return view('users.profile_image',compact('user_details'));
 	}
 
 }
