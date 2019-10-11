@@ -168,67 +168,7 @@
                     </div>
                 </div>
                 <!-- GRID -->
-                <div class="grid">
-                    <div class="unit whole">
-                        <h3 class="border">Our Models</h3>
-                        <!-- MODELS CAROUSEL -->
-                        <div id="models" class="owl-carousel">
-                            <!-- MODEL -->
-                            <figure class="ombre-carousel">
-                                <!-- MODEL IMAGE -->
-                                <a href="single-model.html" class="gallery link">
-                                    <img src="{{asset('frontend/images/photos/models1-square.jpg')}}" alt="" />
-                                </a>
-                                <!-- MODEL INFO -->
-                                <figcaption>
-                                    <h5><a href="single-model.html">Penny Moore</a></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                                    <a class="arrow-button" href="single-model.html">View Profile</a>
-                                </figcaption>
-                            </figure>
-                            <!-- MODEL -->
-                            <figure class="ombre-carousel">
-                                <!-- MODEL IMAGE -->
-                                <a href="single-model.html" class="gallery link">
-                                    <img src="{{asset('frontend/images/photos/models2-square.jpg')}}" alt="" />
-                                </a>
-                                <!-- MODEL INFO -->
-                                <figcaption>
-                                    <h5><a href="single-model.html">Jamie Banks</a></h5>
-                                    <p>Quis instituendarum cupidatat culpa aliquip si ex minim incurreret. E laborum.</p>
-                                    <a class="arrow-button" href="single-model.html">View Profile</a>
-                                </figcaption>
-                            </figure>
-                            <!-- MODEL -->
-                            <figure class="ombre-carousel">
-                                <!-- MODEL IMAGE -->
-                                <a href="single-model.html" class="gallery link">
-                                    <img src="{{asset('frontend/images/photos/models3-square.jpg')}}" alt="" />
-                                </a>
-                                <!-- MODEL INFO -->
-                                <figcaption>
-                                    <h5><a href="single-model.html">Bertha Holmes</a></h5>
-                                    <p>Arbitror domesticarum ad probant, cernantur varias sint an fore ut velit 
-                                        offendit.</p>
-                                    <a class="arrow-button" href="single-model.html">View Profile</a>
-                                </figcaption>
-                            </figure>
-                            <!-- MODEL -->
-                            <figure class="ombre-carousel">
-                                <!-- MODEL IMAGE -->
-                                <a href="single-model.html" class="gallery link">
-                                    <img src="{{asset('frontend/images/photos/models4-square.jpg')}}" alt="" />
-                                </a>
-                                <!-- MODEL INFO -->
-                                <figcaption>
-                                    <h5><a href="single-model.html">Patsy Medina</a></h5>
-                                    <p>Sed se anim lorem dolore sed sed lorem commodo arbitrantur hic quis offendit.</p>
-                                    <a class="arrow-button" href="single-model.html">View Profile</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
+                @include('views.our_model')
                 <!-- GRID BORDER -->
                 <div class="grid-border"></div>
                 <div class="grid">

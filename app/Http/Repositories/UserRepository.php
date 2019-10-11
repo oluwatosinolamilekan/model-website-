@@ -78,7 +78,6 @@ class UserRepository
 	{
 		$random = User::where([
 			'role_id' => 3,
-			'profile_image' != ''
 			])->inRandomOrder()->take(4)->get();
 		return $random;
 	}

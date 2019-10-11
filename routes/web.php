@@ -11,14 +11,6 @@
 |
 */
 
-Route::get('/test', function () {
-    $random = App\Models\User::where([
-        'role_id' => 3,
-        'profile_image' => null
-        ])->inRandomOrder()->take(4)->get();
-    		return $random;
-    return view('views.test');
-});
 
 Route::get('/','ViewController@index')->name('index');
 Route::get('/about','ViewController@about')->name('about');

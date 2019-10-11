@@ -18,7 +18,8 @@ class ViewController extends Controller
     public function index()
     {
         $galleries = $this->user->slider_image();
-    	return view('views.content',compact('galleries'));
+        $random_model = $this->user->random_model();
+    	return view('views.content',compact('galleries','random_model'));
     }
 
      public function about()
