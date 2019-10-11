@@ -11,7 +11,7 @@
                 </a>
            </li>
             <li>
-              <a href="#" class="waves-effect"><i class="fas fa-users"></i>
+            <a href="{{route('all_models')}}" class="waves-effect"><i class="fas fa-users"></i>
                    <span>All Models</span>
               </a>
            </li>

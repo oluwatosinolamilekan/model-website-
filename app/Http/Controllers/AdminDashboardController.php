@@ -38,6 +38,12 @@ class AdminDashboardController extends Controller
         return  redirect()->back()->with('success','Contact Delete Succesfully');
     }
 
+    public function all_models()
+    {
+        $all_models = $this->admin->all_models();
+        return view('admin_pages.all_models',compact('all_models'));
+    }
+
     public function all_admins()
     {
         $all_admins = $this->admin->all_admins();
