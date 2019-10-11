@@ -48,7 +48,7 @@ class UserDashboardRepository
 	public function user_galleries()
     {
     	$user_id = Auth::id();
-    	$galleries = Gallery::where('user_id',$user_id)->simplePaginate(20);
+		$galleries = Gallery::where('user_id',$user_id)->simplePaginate(21);
     	return $galleries;
     }
 

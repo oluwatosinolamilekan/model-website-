@@ -19,7 +19,7 @@
                         <div class="grid-container">
                             <div class="grid-img">
                                 <a href="{{route('profile',$model->slug)}}" class="gallery link">
-                                    <img src="{{asset('frontend/images/photos/models2.jpg')}}" alt="" />
+                                    {{-- <img src="{{asset('frontend/images/photos/models2.jpg')}}" alt="" /> --}}
                                 </a>
                             </div>
                             <div class="grid-content">

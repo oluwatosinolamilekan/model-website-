@@ -53,7 +53,7 @@ class UserRepository
 	
 	public function models()
 	{
-		$models = User::latest()->paginate(20);
+		$models = User::latest()->paginate(21);
 		return $models;
 	}
 
