@@ -19,6 +19,38 @@ class UserDashboardRepository
 		$user = User::where('id',$user_id)->first();
 		return $user;
 	}
+
+	public function update_profile_image($request)
+	{
+		DB::beginTransaction();
+
+		$profile_image = $request->file('profile_image')->getRealPath();
+		 
+		Cloudder::upload($profile_image, null);
+
+		list($width, $height) = getimagesize($profile_image);
+
+		$picture_url = Cloudder::show(Cloudder::getPublicId(), ["width" => 383, "height"=>511]);
+
+		$user_id = Auth::id();
+
+		$update_pic = User::where('id',$user_id)->first();
+		$update_pic->profile_image =  $picture_url;
+		$update_pic->save();
+
+		if ($update_pic) {
+
+			DB::commit();
+			return true;
+
+		}else{
+
+			DB::rollback();
+			return false;
+		}
+
+	}
+
 	public function upload_picture($request)
 	{
 		DB::beginTransaction();
@@ -112,36 +144,7 @@ class UserDashboardRepository
 		}
 	}
 
-	public function update_profile_image($request)
-	{
-		DB::beginTransaction();
-
-		$profile_image = $request->file('profile_image')->getRealPath();
-
-		Cloudder::upload($profile_image, null);
-
-		list($width, $height) = getimagesize($profile_image);
-
-		$picture_url = Cloudder::show(Cloudder::getPublicId(), ["width" => 383.33, "height"=>511.09]);
-
-		$user_id = Auth::id();
-
-		$update_pic = User::where('id',$user_id)->first();
-		$update_pic->profile_image =  $picture_url;
-		$update_pic->save();
-
-		if ($update_pic) {
-
-			DB::commit();
-			return true;
-
-		}else{
-
-			DB::rollback();
-			return false;
-		}
-
-	}
+	
 
 
 	
