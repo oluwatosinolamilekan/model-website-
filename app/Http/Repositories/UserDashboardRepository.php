@@ -139,7 +139,6 @@ class UserDashboardRepository
 		$update->state = $request->state;
 		$update->country = $request->country;
 		$update->save();
-		dd($request->all());
 		if ($update) {
 			DB::commit();
 			return true;

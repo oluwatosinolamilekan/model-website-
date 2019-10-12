@@ -12,7 +12,7 @@
             <div class="grid">
                 <div class="unit half">
                     <!-- CONTACT FORM -->
-                    <form class="form-box" action="{{route('upload_profile_image')}}" method="post" enctype="multipart/form-data">
+                    <form class="form-box" action="{{route('edit_profile')}}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <label>First Name:</label>
@@ -289,7 +289,20 @@
                         <input type="text" name="hair" value="{{$user_details->hair ?? 0}}" />
 
                         <label>EYES:</label>
-                        <input type="text" name="eye" value="{{$user_details->eye ?? 0}}" />
+                        <select name="eye">
+                        <option value="{{$user_details->eye ?? ''}}">{{$user_details->eye}}</option>
+                            <option>Black</option>
+                            <option>Blue</option>
+                            <option>Brown</option>
+                            <option>Gray</option>
+                            <option>Green</option>
+                            <option>Hazel</option>
+                            <option>Maroon</option>
+                            <option>Pink</option>
+                            <option>Multicolored</option>
+                            <option>Other</option>
+                        </select>
+                        {{-- <input type="text" name="eye" value="{{$user_details->eye ?? ''}}" /> --}}
 
                         <label>BUST:</label>
                         <input type="number" name="bust" value="{{$user_details->bust ?? 0}}" />

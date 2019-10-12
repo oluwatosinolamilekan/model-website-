@@ -46,33 +46,33 @@
                 </div>
             </div>
             <div class="unit golden-small">
-                <img class="flex-img" src="{{asset('frontend/images/photos/model5.jpg')}}" />
+                <img class="flex-img" src="{{$models_profile->profile_image}}" />
                 <div class="ombre-box">
                     <!-- TABLE -->
                     <ul class="ombre-table">
                         <li>
                             <div class="ombre-table-left">HEIGHT</div>
-                            <div class="ombre-table-right">5,9</div>
+                            <div class="ombre-table-right">{{$models_profile->height}}</div>
                         </li>
                         <li>
                             <div class="ombre-table-left">HAIR</div>
-                            <div class="ombre-table-right">Brown</div>
+                            <div class="ombre-table-right">{{$models_profile->hair}}</div>
                         </li>
                         <li>
                             <div class="ombre-table-left">EYES</div>
-                            <div class="ombre-table-right">Green</div>
+                            <div class="ombre-table-right">{{$models_profile->eye}}</div>
                         </li>
                         <li>
                             <div class="ombre-table-left">BUST</div>
-                            <div class="ombre-table-right">34</div>
+                            <div class="ombre-table-right">{{$models_profile->eye}}</div>
                         </li>
                         <li>
                             <div class="ombre-table-left">WAIST</div>
-                            <div class="ombre-table-right">24</div>
+                            <div class="ombre-table-right">{{$models_profile->waist}}</div>
                         </li>
                         <li>
                             <div class="ombre-table-left">SHOE</div>
-                            <div class="ombre-table-right">10</div>
+                            <div class="ombre-table-right">{{$models_profile->shoe}}</div>
                         </li>
                     </ul>
                     <ul class="social-icons model-social">

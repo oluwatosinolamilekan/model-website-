@@ -95,6 +95,11 @@ class UserDashboardController extends Controller
 		{
 			try {
 				$validator = Validator::make($request->all(), [
+					'first_name' => 'required',
+					'last_name' => 'required',
+					'gender' => 'nullable',
+					'city' => 'nullable',
+					'phone' => 'nullable',
 					'height' => 'nullable',
 					'hair' => 'nullable',
 					'eye' => 'nullable',
@@ -105,7 +110,6 @@ class UserDashboardController extends Controller
 			} catch (\Exception $e) {
             	return back()->with('error',$e->getMessage());
 			}
-			dd($request->all());
     	
             try {
             	if($validator)
