@@ -22,60 +22,42 @@
                     @csrf
                     <div class="form-group">
                         <label for="">First Name</label>
-                        <input type="text" class="form-control" name="email" placeholder="Email">
+                        <input type="text" class="form-control" name="email" placeholder="Enter First Name" required>
                     </div>
                     <div class="form-group">
                             <label for="">Last Name</label>
-                            <input type="text" class="form-control" name="password" placeholder="Enter Password">
+                            <input type="text" class="form-control" name="password" placeholder="Enter Last Name" required>
                     </div>
 
-                    <div class="form-group">
-                            <label for="">Gender</label>
-                            <input type="text" class="form-control" name="password" placeholder="Enter Password">
-                    </div>
 
                     <div class="form-group">
                             <label for="">Email</label>
-                            <input type="email" class="form-control" name="password" placeholder="Enter Password">
+                            <input type="email" class="form-control" name="password" placeholder="Enter Email" required>
                     </div>
 
                     <div class="form-group">
                             <label for="">Password</label>
-                            <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                            <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
                     </div>
 
                     <div class="form-group">
                             <label for="">Confirm Password</label>
-                            <input type="password" class="form-control" name="confirmation_password" placeholder="Enter Same Password">
+                            <input type="password" class="form-control" name="confirmation_password" placeholder="Enter Same Password" required>
                     </div>
 
                     <div class="form-group">
                             <label for="">Sex</label>
-                            <select class="form-control" name="sex" required>
+                            <select class="form-control" name="gender" required>
                                 <option value="">Select</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                     </div>
 
-                    <div class="form-group">
-                            <label for="">Phone Number</label>
-                            <input type="number" class="form-control" name="phone" placeholder="Enter Phone Number">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Address</label>
-                        <input type="text" class="form-control" name="address" placeholder="Enter Address">
-                    </div>
-
-                    <div class="form-group">
-                            <label for="">City</label>
-                            <input type="text" class="form-control" name="city" placeholder="Enter City">
-                    </div>
-
+                    
                     <div class="form-group">
                         <label for="">Image</label>
-                        <input type="file" class="form-control" name="profile_image">
+                        <input type="file" class="form-control" name="profile_image" required>
                     </div>
 
 
