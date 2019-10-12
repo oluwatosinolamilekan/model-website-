@@ -21,12 +21,15 @@
                     @if($models_profile->gallaries)
                     
                         @foreach($models_profile->gallaries->take(4) as $gallery)
+
                         <div class="ombre-carousel">
                             <a href="{{ $gallery->images }}" class="gallery photo" data-title="{{$models_profile->first_name}}">
                                 <img src="{{ $gallery->images }}"  alt="" />
                             </a>
                         </div>
+
                         @endforeach
+                        
                         @else
 
                     @endif

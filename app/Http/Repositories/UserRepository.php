@@ -35,8 +35,6 @@ class UserRepository
 			$user->city = $request->city;
 			$user->state = $request->state;
 			$user->country = $request->country;
-			// $user->profile_image = $profile_image;
-			$user->profile_image = 'dk';
 
 			$user->save();
 			if (!$user) {

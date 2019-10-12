@@ -95,11 +95,17 @@ class UserDashboardController extends Controller
 		{
 			try {
 				$validator = Validator::make($request->all(), [
-					'profile_image' => 'required',
+					'height' => 'nullable',
+					'hair' => 'nullable',
+					'eye' => 'nullable',
+					'bust' => 'nullable',
+					'waist' => 'nullable',
+					'shoe' => 'nullable',
 				]);
 			} catch (\Exception $e) {
             	return back()->with('error',$e->getMessage());
 			}
+			dd($request->all());
     	
             try {
             	if($validator)
@@ -114,7 +120,8 @@ class UserDashboardController extends Controller
             	return back()->with('error',$e->getMessage());
             }
 		}
-		return view('user.edit_profile');
+		$user_details = $this->user->user_details();
+		return view('users.edit_profile',compact('user_details'));
 	}
 
 }

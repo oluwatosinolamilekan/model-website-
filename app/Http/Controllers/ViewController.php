@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use DB;
 use App\Http\Repositories\UserRepository;
+
 class ViewController extends Controller
 {
     private $user;

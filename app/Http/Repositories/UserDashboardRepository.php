@@ -121,7 +121,12 @@ class UserDashboardRepository
 		$user_id = Auth::id();
 
 		$update = User::where('id',$user_id)->first();
-		dd($update);
+		$update->first_name = $request->first_name;
+		$update->last_name = $request->last_name;
+		$update->gender = $request->gender;
+		$update->address = $request->address;
+		$update->city = $request->city;
+		$update->phone = $request->phone;
 		$update->height = $request->height;
 		$update->hair = $request->hair;
 		$update->eye = $request->eye;
@@ -134,7 +139,7 @@ class UserDashboardRepository
 		$update->state = $request->state;
 		$update->country = $request->country;
 		$update->save();
-
+		dd($request->all());
 		if ($update) {
 			DB::commit();
 			return true;

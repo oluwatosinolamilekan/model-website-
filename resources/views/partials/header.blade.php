@@ -51,7 +51,7 @@
                                     <a href="{{route('upload_profile_image')}}">Upload Profile(pics)</a>
                                 </li>
                                 <li>
-                                    <a href="layout.html">Edit Profile</a>
+                                    <a href="{{route('edit_profile')}}">Edit Profile</a>
                                 </li>
                             </ul>
                         </li>
