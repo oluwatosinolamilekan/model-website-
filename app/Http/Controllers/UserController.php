@@ -25,7 +25,7 @@ class UserController extends Controller
 					'email' => 'required|unique:users',
 					'password' => 'required|confirmed',
 					'gender' => 'required',
-					'profile_image' => 'required',
+					'profile_image' => 'required|image',
 				]);
 	    	} catch (\Exception $e) {
 	    		return back()->with('error',$e->getMessage());

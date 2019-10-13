@@ -22,23 +22,23 @@ class UserRepository
 		list($width, $height) = getimagesize($image_name);
 		$profile_image = Cloudder::show(Cloudder::getPublicId(), ["width" => 200, "height"=>200]);
 
-			DB::beginTransaction();
-			$user = new User;
-			$user->first_name = $request->first_name;
-			$user->last_name = $request->last_name;
-			$user->slug = str_slug($request->first_name."-".$request->last_name);
-			$user->email = $request->email;
-			$user->password =Hash::make($request->password);
-			$user->gender = $request->gender;
-			$user->profile_image = $profile_image;
-			$user->save();
-			if (!$user) {
+		DB::beginTransaction();
+		$user = new User;
+		$user->first_name = $request->first_name;
+		$user->last_name = $request->last_name;
+		$user->slug = str_slug($request->first_name."-".$request->last_name);
+		$user->email = $request->email;
+		$user->password =Hash::make($request->password);
+		$user->gender = $request->gender;
+		$user->profile_image = $profile_image;
+		$user->save();
+		if (!$user) {
 			DB::rollback();
 			return false;
-			}else{
+		}else{
 			DB::commit();
 			return true;
-			}
+		}
 		
 	}
 
