@@ -23,22 +23,21 @@ class UserController extends Controller
 					'first_name' => 'required',
 					'last_name' => 'required',
 					'email' => 'required|unique:users',
-					'password' => 'required',
+					'password' => 'required|confirmed',
 					'gender' => 'required',
 					'profile_image' => 'required',
 				]);
 	    	} catch (\Exception $e) {
 	    		return back()->with('error',$e->getMessage());
 	    	}
-
 	    	try {
 	    		if($validator)
 	    		{
 	                    $user = $this->user->register($request);
 	                    if($user == false ){
-	                        return Redirect::back()->with('error', 'Batch cannot be created.');
+	                        return Redirect::back()->with('error', 'User cannot be created.');
 	                    }
-	                    return redirect()->back()->with('success','Batch created Succesfully');
+	                    return redirect()->back()->with('success','User created Succesfully');
 
 	                }
 	                else{

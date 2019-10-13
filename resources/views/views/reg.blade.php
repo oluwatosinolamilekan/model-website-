@@ -18,21 +18,21 @@
         <!-- GRID -->
         <div class="grid">
             <div class="unit half">
-            <form action="{{route('register')}}" method="post">
+            <form action="{{route('register')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="">First Name</label>
-                        <input type="text" class="form-control" name="email" placeholder="Enter First Name" required>
+                        <input type="text" class="form-control" name="first_name" placeholder="Enter First Name" required>
                     </div>
                     <div class="form-group">
                             <label for="">Last Name</label>
-                            <input type="text" class="form-control" name="password" placeholder="Enter Last Name" required>
+                            <input type="text" class="form-control" name="last_name" placeholder="Enter Last Name" required>
                     </div>
 
 
                     <div class="form-group">
                             <label for="">Email</label>
-                            <input type="email" class="form-control" name="password" placeholder="Enter Email" required>
+                            <input type="email" class="form-control" name="email" placeholder="Enter Email" required>
                     </div>
 
                     <div class="form-group">

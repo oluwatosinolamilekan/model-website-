@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use Mail;
 use Auth;
+use DB;
 use App\Models\{User,PasswordReset,Gallery};
 use Cloudder;
 
@@ -27,9 +28,9 @@ class UserRepository
 			$user->last_name = $request->last_name;
 			$user->slug = str_slug($request->first_name."-".$request->last_name);
 			$user->email = $request->email;
-			$user->password = $request->password;
+			$user->password =Hash::make($request->password);
 			$user->gender = $request->gender;
-			$user->profile_image = $request->profile_image;
+			$user->profile_image = $profile_image;
 			$user->save();
 			if (!$user) {
 			DB::rollback();
