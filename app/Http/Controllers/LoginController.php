@@ -35,6 +35,9 @@ class LoginController extends Controller
                 return back()->with('error','wrong password');
             }
         }
+        if (Auth::check() && Auth::user()->role_id == 3) {
+            return redirect()->route('user.dashboard');
+        }
         return view('views.login');
     }
 

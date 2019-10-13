@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\ModelScopes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, ModelScopes;
 
     /**
      * The attributes that are mass assignable.
@@ -33,6 +34,7 @@ class User extends Authenticatable
         'waist',
         'shoe',
         'profile_image',
+        'status',
     ];
 
     /**

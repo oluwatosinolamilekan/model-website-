@@ -28,7 +28,8 @@ class UserRepository
 		$user->last_name = $request->last_name;
 		$user->slug = str_slug($request->first_name."-".$request->last_name);
 		$user->email = $request->email;
-		$user->password =Hash::make($request->password);
+		$user->password
+		 =Hash::make($request->password);
 		$user->gender = $request->gender;
 		$user->profile_image = $profile_image;
 		$user->save();
