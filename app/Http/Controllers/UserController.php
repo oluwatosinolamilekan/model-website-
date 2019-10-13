@@ -20,15 +20,13 @@ class UserController extends Controller
     	if ($request->isMethod('post')) {
     		try {
 	    		$validator = Validator::make($request->all(), [
-						'government_approved' => 'required',
-						'contact_phone' => 'required|numeric',
-					]);
-				// if ($validator->fails()) {
-				// 	return back()->with('middleware', 'Check Your Credentials')
-				// 	->withErrors($validator)
-				// 	->withInput();
-				// }
-
+					'first_name' => 'required',
+					'last_name' => 'required',
+					'email' => 'required|unique:users',
+					'password' => 'required',
+					'gender' => 'required',
+					'profile_image' => 'required',
+				]);
 	    	} catch (\Exception $e) {
 	    		return back()->with('error',$e->getMessage());
 	    	}
@@ -36,7 +34,6 @@ class UserController extends Controller
 	    	try {
 	    		if($validator)
 	    		{
-	    			dd($validator);
 	                    $user = $this->user->register($request);
 	                    if($user == false ){
 	                        return Redirect::back()->with('error', 'Batch cannot be created.');

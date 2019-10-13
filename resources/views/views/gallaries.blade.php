@@ -56,5 +56,34 @@
                     </div>
                 </div>
             </div>
+
+            {{-- $listArray = [5,1,2,3,4,5,1];
+            function findNumber($arr, $k) {
+                $count = count($arr);
+                for($i =0; $i<$count; $i++){
+                    if($arr[$i] === $k){
+                        return "Yes";
+                    }
+                    return "No";
+                }
+            
+            }
+            findNumber($listArray,5);
+             --}}
+             $listArray = [1,3,4,5,6,7];
+function findVal($arr,$k){
+  for($i=0; $i<count($arr); $i++){
+      if($k === $arr[$i]){
+            return "Yes";
+      }else{
+          return "No";
+      }
+      
+    }
+}
+
+$result = findVal($listArray,3);
+echo $result;
+
         </div>
 @endsection

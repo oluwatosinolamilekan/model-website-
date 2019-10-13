@@ -25,17 +25,11 @@ class UserRepository
 			$user = new User;
 			$user->first_name = $request->first_name;
 			$user->last_name = $request->last_name;
-			// $user->slug = str_slug($request->first_name"-".$request->last_name);
+			$user->slug = str_slug($request->first_name."-".$request->last_name);
 			$user->email = $request->email;
 			$user->password = $request->password;
 			$user->gender = $request->gender;
-			$user->dob = $request->dob;
-			$user->phone = $request->phone;
-			$user->address = $request->address;
-			$user->city = $request->city;
-			$user->state = $request->state;
-			$user->country = $request->country;
-
+			$user->profile_image = $request->profile_image;
 			$user->save();
 			if (!$user) {
 			DB::rollback();
