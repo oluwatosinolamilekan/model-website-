@@ -28,7 +28,7 @@ class UserSeed extends Seeder
                 'gender'=>'male',
                 'state'=>$faker->state,
                 'city'=>$faker->city,
-                'profile_image'=>'39016.jpg',
+                'status'=>1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
