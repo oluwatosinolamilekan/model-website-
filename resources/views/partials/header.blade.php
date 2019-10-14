@@ -32,7 +32,9 @@
                         <li>
                             <a href="{{route('index')}}">Home</a>
                         </li>
-                        
+                        <li>
+                                <a href="#">Galleries</a>
+                        </li>
                         @if(!Auth::check())
                         <li>
                             <a href="{{route('login')}}">Login</a>
@@ -44,8 +46,11 @@
                         <li>
                             <a href="#">Dashboard</a>
                             <ul>
+                                    <li>
+                                            <a href="{{route('user.dashboard')}}">Account</a>
+                                    </li>
                                 <li>
-                                    <a href="about.html">Gallery</a>
+                                    <a href="{{route('user.galleries')}}">My Gallery</a>
                                 </li>
                                 <li>
                                     <a href="{{route('upload_profile_image')}}">Upload Profile(pics)</a>
@@ -55,16 +60,15 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="{{route('user.dashboard')}}">Dashboard</a>
-                        </li>
+                        
                         <li>
                             <a href="{{route('logout')}}">Logout</a>
                         </li>
 
                         @endif
+                        
                         <li>
-                            <a href="{{route('galleries')}}">Models</a>
+                            <a href="{{route('model')}}">Models</a>
                         </li>
                         <li>
                             <a href="{{route('contact')}}">Contact</a>

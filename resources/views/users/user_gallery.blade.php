@@ -41,7 +41,7 @@
         <main id="main">
             <!-- PAGE TITLE -->
             <div id="page-title">
-                <h1><span>Models</span></h1>
+                <h1><span>{{Auth::user()->first_name.""." Gallery"}}</span></h1>
             </div>
             <!-- PAGE CONTAINER -->
             <div id="page-container">
@@ -58,7 +58,7 @@
                                         <a href="#" class="gallery photo">
                                             <img src="{{$gallery->images}}" alt="" />
                                         </a>
-                                    </div>
+                                    </div>h
                                 </div>
                                @endforeach
                             </div>

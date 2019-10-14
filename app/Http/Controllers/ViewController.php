@@ -28,10 +28,10 @@ class ViewController extends Controller
     	return view('views.about');
     }
 
-    public function galleries()
+    public function model()
     {
         $models = $this->user->models();
-        return view('views.gallaries',compact('models'));
+        return view('views.model',compact('models'));
     }
 
     public function models()

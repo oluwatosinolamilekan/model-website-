@@ -14,7 +14,7 @@
 
 Route::get('/','ViewController@index')->name('index');
 Route::get('/about','ViewController@about')->name('about');
-Route::get('/models','ViewController@galleries')->name('galleries');
+Route::get('/models','ViewController@model')->name('model');
 Route::get('/contact','ViewController@contact')->name('contact');
 Route::match(['get', 'post'],'contact','ViewController@contact')->name('contact');
 // Route::get('/models','ViewController@models')->name('models');

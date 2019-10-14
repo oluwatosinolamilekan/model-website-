@@ -50,7 +50,7 @@ class UserRepository
 	
 	public function models()
 	{
-		$models = User::latest()->paginate(21);
+		$models = User::where('status',1)->latest()->paginate(21);
 		return $models;
 	}
 
@@ -71,6 +71,11 @@ class UserRepository
 		return $galleries;
 	}
 	
+	public function galleries()
+	{
+		$galleries = Gallery::where('status',1)->latest()->get();
+		return $galleries;
+	}
 
 	public function random_model()
 	{
