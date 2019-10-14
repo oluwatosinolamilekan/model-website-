@@ -4,31 +4,56 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Repositories\AdminDashboardRepository;
+use App\Http\Repositories\UserRepository;
+
+
 
 class AdminDashboardController extends Controller
 {
 
     private $admin;
+    private $user;
 
-	public function __construct(AdminDashboardRepository $admin)
+
+	public function __construct(AdminDashboardRepository $admin, UserRepository $user)
     {
         $this->admin = $admin;
+        $this->user = $user;
+
     }
 
     public function index()
     {
         $count_models = $this->admin->count_all_models();
+
         $count_all_admin = $this->admin->count_all_admin();
+
         $all_models = $this->admin->all_models();
+
         $count_all_today_models = $this->admin->today_models();
+
         $pending_galleries = $this->admin->pending_galleries();
+
+        $count_male_models = $this->admin->count_male_models();
+
+        $count_female_models = $this->admin->count_female_models();
+
         return view('admin_pages.dashboard',compact(
             'count_models',
             'count_all_admin',
             'all_models',
             'count_all_today_models',
-            'pending_galleries'
+            'pending_galleries',
+            'count_male_models',
+            'count_female_models
+            '
         ));
+    }
+
+    public function actived_model($id)
+    {
+        $actived = $this->admin->active_model($id);
+        return back()->with('success','Model Have been Actived');
     }
 
 

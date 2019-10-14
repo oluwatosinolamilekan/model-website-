@@ -71,6 +71,57 @@
                     </div>
                   </div>
                 </div>
+                <div class="col-xl-3 col-md-6">
+                  <div class="card bg-primary mini-stat position-relative">
+                    <div class="card-body">
+                      <div class="mini-stat-desc">
+                        <h6 class="text-uppercase verti-label text-white-50">Male</h6>
+                        <div class="text-white">
+                          <h6 class="text-uppercase mt-0 text-white-50">Models</h6>
+                          <h3 class="mb-3 mt-0">{{$count_male_models}}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                  <div class="card bg-primary mini-stat position-relative">
+                    <div class="card-body">
+                      <div class="mini-stat-desc">
+                        <h6 class="text-uppercase verti-label text-white-50">Female</h6>
+                        <div class="text-white">
+                          <h6 class="text-uppercase mt-0 text-white-50">Models</h6>
+                          <h3 class="mb-3 mt-0">{{$count_female_models}}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                  <div class="card bg-primary mini-stat position-relative">
+                    <div class="card-body">
+                      <div class="mini-stat-desc">
+                        <div class="text-white">
+                          <h6 class="text-uppercase mt-0 text-white-50">Total Gallery</h6>
+                          <h3 class="mb-3 mt-0">{{$pending_galleries}}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                  <div class="card bg-primary mini-stat position-relative">
+                    <div class="card-body">
+                      <div class="mini-stat-desc">
+                        <h6 class="text-uppercase verti-label text-white-50">Aprrove</h6>
+                        <div class="text-white">
+                          <h6 class="text-uppercase mt-0 text-white-50">Picture</h6>
+                          <h3 class="mb-3 mt-0">{{$pending_galleries}}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div><!-- end row -->
               <div class="row">
                 {{-- @if(count($payments) > 0)

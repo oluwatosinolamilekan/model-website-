@@ -19,6 +19,41 @@ class AdminDashboardRepository
 		return $all_models;
 	}
 
+	public function active_model($id)
+	{
+		$activated = User::where([
+			'id' => $id,
+			'role_id' => 3,
+		])->first();
+
+		$activated->status = 1;
+		$activated->save();
+
+		return $activated;
+	}
+
+
+	public function count_male_models()
+	{
+		$models = User::where([
+			'status' => 1,
+			'gender' => 'male'
+		])->count();
+
+		return $models;
+	}
+
+	public function count_female_models()
+	{
+		$models = User::where([
+			'status' => 1,
+			'gender' => 'female'
+		])->count();
+		
+		return $models;
+	}
+	
+
 	public function delete_model($id)
 	{
 		$model = User::where([
