@@ -81,6 +81,7 @@ class UserRepository
 	{
 		$random = User::where([
 			'role_id' => 3,
+			'status' => 1,
 			])->inRandomOrder()->take(4)->get();
 		return $random;
 	}
