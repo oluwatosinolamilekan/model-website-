@@ -18,9 +18,12 @@ class UserRepository
 	public function register($request)
 	{
 		$image_name = $request->file('profile_image')->getRealPath();
-		$name = $request->file('profile_image')->getClientOriginalName();
+
+		Cloudder::upload($image_name, null);
+
 		list($width, $height) = getimagesize($image_name);
-		$profile_image = Cloudder::show(Cloudder::getPublicId(), ["width" => 200, "height"=>200]);
+
+		$profile_image = Cloudder::show(Cloudder::getPublicId(), ["width" => 383, "height"=>511]);
 
 		DB::beginTransaction();
 		$user = new User;
@@ -28,11 +31,11 @@ class UserRepository
 		$user->last_name = $request->last_name;
 		$user->slug = str_slug($request->first_name."-".$request->last_name);
 		$user->email = $request->email;
-		$user->password
-		 =Hash::make($request->password);
+		$user->password = Hash::make($request->password);
 		$user->gender = $request->gender;
 		$user->profile_image = $profile_image;
 		$user->save();
+		Auth::login($user);
 		if (!$user) {
 			DB::rollback();
 			return false;
@@ -63,6 +66,7 @@ class UserRepository
 			'status' => 1,
 			'slider' => 1
 		])->take(3)->get();
+
 
 		return $galleries;
 	}

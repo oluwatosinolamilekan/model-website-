@@ -36,8 +36,9 @@ class UserController extends Controller
 	                    $user = $this->user->register($request);
 	                    if($user == false ){
 	                        return Redirect::back()->with('error', 'User cannot be created.');
-	                    }
-	                    return redirect()->back()->with('success','User created Succesfully');
+						}
+						return redirect()->route('user.dashboard')->with('success','Welcome');
+	                    // return redirect()->back()->with('success','User created Succesfully');
 
 	                }
 	                else{
