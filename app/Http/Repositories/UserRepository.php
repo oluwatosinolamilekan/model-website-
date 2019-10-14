@@ -46,7 +46,25 @@ class UserRepository
 		
 	}
 
+	public function male_models()
+	{
+		$models = User::where([
+			'status' => 1,
+			'gender' => 'male'
+		])->latest()->paginate(21);
 
+		return $models;
+	}
+
+	public function female_models()
+	{
+		$models = User::where([
+			'status' => 1,
+			'gender' => 'female'
+		])->latest()->paginate(21);
+		
+		return $models;
+	}
 	
 	public function models()
 	{

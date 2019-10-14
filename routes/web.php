@@ -18,9 +18,9 @@ Route::get('/models','ViewController@model')->name('model');
 Route::get('/galleries','ViewController@galleries')->name('galleries');
 Route::get('/contact','ViewController@contact')->name('contact');
 Route::match(['get', 'post'],'contact','ViewController@contact')->name('contact');
-// Route::get('/models','ViewController@models')->name('models');
 Route::get('/profile/{slug}','ViewController@profile')->name('profile');
-
+Route::get('male-models','ViewController@male_models')->name('male_models');
+Route::get('female-models','ViewController@female_models')->name('female_models');
 
 
 

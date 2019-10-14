@@ -22,7 +22,6 @@
                         {{$model->first_name}}
                     </a>
                     </h5>
-                    {{-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p> --}}
                     <a class="arrow-button" href="{{route('profile',$model->slug)}}">View Profile</a>
                 </figcaption>
             </figure>

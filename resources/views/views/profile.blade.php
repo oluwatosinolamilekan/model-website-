@@ -18,7 +18,7 @@
                 <!-- MODEL CAROUSEL -->
                 <div id="model-gallery" class="owl-carousel">
                     <!-- IMAGE -->
-                    @if($models_profile->gallaries)
+                    @if(count($models_profile->gallaries) > 0)
                     
                         @foreach($models_profile->gallaries->take(4) as $gallery)
 
@@ -29,7 +29,7 @@
                         </div>
 
                         @endforeach
-                        
+
                         @else
 
                     @endif
@@ -46,7 +46,14 @@
                 </div>
             </div>
             <div class="unit golden-small">
-                <img class="flex-img" src="{{$models_profile->profile_image}}" />
+                    @if($models_profile->gender == 'male' && $models_profile->profile_image === null )
+                    <img src="{{asset('frontend/images/maleunknow.jpg')}}" alt="" />
+                        @elseif($models_profile->gender == 'female' && $models_profile->profile_image === null)
+                                <img src="{{asset('frontend/images/ladyunknow.jpg')}}" alt="" />
+                        @elseif($models_profile->profile_image !== null)
+                            {{-- <img src="{{$models_profile->profile_image}}" alt="" /> --}}
+                    <img class="flex-img" src="{{$models_profile->profile_image}}" />
+                @endif
                 <div class="ombre-box">
                     <!-- TABLE -->
                     <ul class="ombre-table">

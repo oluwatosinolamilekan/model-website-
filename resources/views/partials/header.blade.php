@@ -33,7 +33,25 @@
                             <a href="{{route('index')}}">Home</a>
                         </li>
                         <li>
-                            <a href="{{route('galleries')}}">Galleries</a>
+                            <a href="{{route('about')}}">About</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">Models</a>
+                            <ul>
+                                <li>
+                                    <a href="{{route('male_models')}}">Men</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('female_models')}}">Female</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{route('galleries')}}">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="{{route('contact')}}">Contact Us</a>
                         </li>
                         @if(!Auth::check())
                         <li>
@@ -66,16 +84,6 @@
                         </li>
 
                         @endif
-                        
-                        <li>
-                            <a href="{{route('model')}}">Models</a>
-                        </li>
-                        <li>
-                            <a href="{{route('contact')}}">Contact</a>
-                        </li>
-                        <li>
-                            <a href="{{route('about')}}">About</a>
-                        </li>
                         
                     </ul>
                 </nav>

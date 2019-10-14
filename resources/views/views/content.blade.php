@@ -27,7 +27,7 @@
                     <div class="unit one-third">
                         <!-- ICON -->
                         <div class="icon-container">
-                            <a href="models-2-columns.html" class="fa fa-bolt"></a>
+                            <a href="{{route('male_models')}}" class="fa fa-bolt"></a>
                         </div>
                         <!-- ICON TEXT-->
                         <div class="icon-text">
@@ -38,7 +38,7 @@
                     <div class="unit one-third">
                         <!-- ICON -->
                         <div class="icon-container">
-                            <a href="models-2-columns.html" class="fa fa-fire"></a>
+                            <a href="{{route('female_models')}}" class="fa fa-fire"></a>
                         </div>
                         <!-- ICON TEXT -->
                         <div class="icon-text">
@@ -171,7 +171,7 @@
                 @include('views.our_model')
                 <!-- GRID BORDER -->
                 <div class="grid-border"></div>
-                <div class="grid">
+                {{-- <div class="grid">
                     <div class="unit whole no-padding">
                         <!-- OUR PARTNERS CAROUSEL -->
                         <div id="partners" class="owl-carousel">
@@ -207,7 +207,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </main>
 @endsection

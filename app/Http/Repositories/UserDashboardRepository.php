@@ -138,6 +138,9 @@ class UserDashboardRepository
 		$update->city = $request->city;
 		$update->state = $request->state;
 		$update->country = $request->country;
+		$update->description = $request->description;
+		$update->twitter = $request->twitter;
+		$update->instagram = $request->instagram;
 		$update->save();
 		if ($update) {
 			DB::commit();

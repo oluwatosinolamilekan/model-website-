@@ -302,7 +302,6 @@
                             <option>Multicolored</option>
                             <option>Other</option>
                         </select>
-                        {{-- <input type="text" name="eye" value="{{$user_details->eye ?? ''}}" /> --}}
 
                         <label>BUST:</label>
                         <input type="number" name="bust" value="{{$user_details->bust ?? 0}}" />
@@ -312,6 +311,15 @@
 
                         <label>SHOE:</label>
                         <input type="number" name="shoe" value="{{$user_details->shoe ?? 0}}" />
+
+                        <label>Twitter:</label>
+                        <input type="url" name="twitter" value="{{$user_details->twitter }}" placeholder="https://facebook.com/me" pattern="https://.*" />
+
+                        <label>Instagram:</label>
+                        <input type="url" name="instagram" value="{{$user_details->instagram}}"  placeholder="https://instagram.com/me" pattern="https://.*" />
+
+                        <label>Description:</label>
+                        <textarea name="description"  cols="30" rows="10"></textarea>
 
                         <input type="submit" id="sendMessage" name="sendMessage" value="Submit" />
                     </form>
