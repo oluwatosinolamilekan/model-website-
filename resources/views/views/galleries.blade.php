@@ -3,7 +3,7 @@
 @section('content')
     <!-- PAGE TITLE -->
     <div id="page-title">
-            <h1><span>Models</span></h1>
+            <h1><span>Galleries</span></h1>
         </div>
         <!-- PAGE CONTAINER -->
         <div id="page-container">
@@ -15,33 +15,18 @@
                         <div id="three-columns" data-columns>
                             <!-- GALLERY 1 -->
                             @yield('content')
-                            @foreach($models as $model)
+                            @foreach($galleries as $gallery)
                              <div id="gallery3" class="grid-container">
                                 <div class="grid-img">
-                                    <a href="{{route('profile',$model->slug)}}" class="">
-                                        @if($model->gender == 'male' && $model->profile_image === null )
-                                                <img src="{{asset('frontend/images/maleunknow.jpg')}}" alt="" />
-                                            @elseif($model->gender == 'female' && $model->profile_image === null)
-                                                    <img src="{{asset('frontend/images/ladyunknow.jpg')}}" alt="" />
-                                            @elseif($model->profile_image !== null)
-                                                <img src="{{$model->profile_image}}" alt="" />
-                                        @endif
-                                        {{-- <img src="{{asset('frontend/images/photos/gallery3.jpg')}}" alt="" /> --}}
+                                    <a href="#" class="">
+                                        <img src="{{$gallery->images}}" alt="" />
                                     </a>
                                    
                                 </div>
-                                <div class="grid-content">
-                                    <h5>
-                                   <a href="{{route('profile',$model->slug)}}">
-                                        {{$model->first_name." ".$model->last_name}}
-                                    </a>
-                                </h5>
-                                </div>
-                                <a class="arrow-button" href="{{route('profile',$model->slug)}}">
+                                <a class="arrow-button" href="#">
                                         View Gallery
                                 </a>
                             </div>
-                            <!-- GALLERY 2 -->
                             @endforeach
                         </div>
                     </div>
@@ -70,7 +55,7 @@
             }
             findNumber($listArray,5);
              --}}
-             $listArray = [1,3,4,5,6,7];
+             {{-- $listArray = [1,3,4,5,6,7];
 function findVal($arr,$k){
   for($i=0; $i<count($arr); $i++){
       if($k === $arr[$i]){
@@ -80,10 +65,10 @@ function findVal($arr,$k){
       }
       
     }
-}
+} --}}
 
-$result = findVal($listArray,3);
-echo $result;
+{{-- $result = findVal($listArray,3); --}}
+{{-- echo $result; --}}
 
         </div>
 @endsection

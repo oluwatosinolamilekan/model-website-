@@ -23,6 +23,12 @@ class ViewController extends Controller
     	return view('views.content',compact('galleries','random_model'));
     }
 
+    public function galleries()
+    {
+        $galleries = $this->user->galleries();
+        return view('views.galleries',compact('galleries'));
+    }
+
      public function about()
     {
     	return view('views.about');

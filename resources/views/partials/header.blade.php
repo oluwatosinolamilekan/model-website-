@@ -33,7 +33,7 @@
                             <a href="{{route('index')}}">Home</a>
                         </li>
                         <li>
-                                <a href="#">Galleries</a>
+                            <a href="{{route('galleries')}}">Galleries</a>
                         </li>
                         @if(!Auth::check())
                         <li>
